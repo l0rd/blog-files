@@ -1,0 +1,31 @@
+    ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+    DOCKER_HOST_NAME = "dockerhost"
+    DOCKER_HOST_VAGRANTFILE = "./DockerHostVagrantfile"
+
+    Vagrant.configure("2") do |config|
+
+      config.vm.define "vertxreceiver" do |a|
+        a.vm.provider "docker" do |d|
+          d.image = "l0rd/vertxdev:latest"
+          d.name = "vertxreceiver"
+          d.remains_running = true
+          d.cmd = ["vertx", "run", "vertx-examples/src/raw/java/eventbus_pointtopoint/Receiver.java","-cluster"]
+          d.volumes = ["/src/vertx/:/usr/local/src"]
+          d.vagrant_machine = "#{DOCKER_HOST_NAME}"
+          d.vagrant_vagrantfile = "#{DOCKER_HOST_VAGRANTFILE}"
+        end
+      end
+
+      config.vm.define "vertxsender" do |a|
+        a.vm.provider "docker" do |d|
+          d.image = "l0rd/vertxdev:latest"
+          d.name = "vertxsender"
+          d.remains_running = true
+          d.cmd = ["vertx", "run", "vertx-examples/src/raw/java/eventbus_pointtopoint/Sender.java","-cluster"]
+          d.volumes = ["/src/vertx/:/usr/local/src"]
+          d.vagrant_machine = "#{DOCKER_HOST_NAME}"
+          d.vagrant_vagrantfile = "#{DOCKER_HOST_VAGRANTFILE}"
+        end
+      end
+
+    end

@@ -1,0 +1,15 @@
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "docker-desktop" do |a|
+    a.vm.provider "docker" do |d|
+      d.build_dir = "."
+      d.build_args = ["-t=l0rd/docker-desktop"]
+      has_ssh = true
+      d.name = "docker-desktop"
+      d.remains_running = true
+    end
+  end
+
+end

@@ -1,0 +1,17 @@
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+
+Vagrant.configure("2") do |config|
+
+  config.vm.synced_folder "src", "/usr/local/src"
+  
+  config.vm.define "vertxdev-src" do |a|
+    a.vm.provider "docker" do |d|
+      d.image = "l0rd/vertxdev:latest"
+      d.ports = ["8080:8080"]
+      d.name = "vertxdev-src"
+      d.remains_running = true
+      d.cmd = ["vertx", "run", "vertx-examples/src/raw/java/httphelloworld/HelloWorldServer.java"]
+    end
+  end
+
+end
