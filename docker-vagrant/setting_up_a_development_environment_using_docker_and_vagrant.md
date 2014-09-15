@@ -1,6 +1,6 @@
 # Setting up a development environment using docker and vagrant
 
-![docker+vagrant](/Users/mariolet/Development/blog-files/vagrant-docker/images/docker+vagrant.png)
+![docker+vagrant](images/docker+vagrant.png)
 
 Often considered two alternative tools, Docker and Vagrant can be used together to build repeatable and portable development environments.
 
@@ -129,21 +129,23 @@ Install [Vagrant]() and [Virtualbox]()
 
 Create the following Vagrantfile and copy it where the Dockerfile is :
 
-    ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+```ruby
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
 
-    Vagrant.configure("2") do |config|
-      config.vm.define "vertxdev" do |a|
-        a.vm.provider "docker" do |d|
-          d.build_dir = "."
-          d.build_args = ["-t=vertxdev"]
-          d.ports = ["8080:8080"]
-          d.name = "vertxdev"
-          d.remains_running = true
-          d.cmd = ["vertx", "run", "vertx-examples/src/raw/java/httphelloworld/HelloWorldServer.java"]
-          d.volumes = ["/src/vertx/:/usr/local/src"]
-        end
-      end
+Vagrant.configure("2") do |config|
+  config.vm.define "vertxdev" do |a|
+    a.vm.provider "docker" do |d|
+      d.build_dir = "."
+      d.build_args = ["-t=vertxdev"]
+      d.ports = ["8080:8080"]
+      d.name = "vertxdev"
+      d.remains_running = true
+      d.cmd = ["vertx", "run", "vertx-examples/src/raw/java/httphelloworld/HelloWorldServer.java"]
+      d.volumes = ["/src/vertx/:/usr/local/src"]
     end
+  end
+end
+```
 
 We will clone vertx-examples repository as done with docker but using vagrant instead:
 
