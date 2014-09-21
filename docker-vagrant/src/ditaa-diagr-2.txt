@@ -1,0 +1,29 @@
+                                  +------------------------------+
+                                  | Mac or Windows Host  cFFD    |
+                                  |                              |
++------------------------------+  |      +-----------------------+
+| Linux Host  c3C6             |  |      |                       |
+| (Ubuntu Trusty 64)           |  |      |         Vagrant       |
+|                +-------------+  |      |                  cEEF |
+|                |             |  |      +-----------------------+
+|                |   Vagrant   |  |      | Docker Host VM        |
+|                |        cEEF |  |      | (Tiny Core Linux)     |
+|                +-------------+  |      | cFCF    +-------------+
+|                | Docker      |  |      |         | Docker      |
+|                | Container   |  |      |         | Container   |
+|                | c8CF        |  |      |         | c8CF        |
+|           ^    |             |  |      |    ^    |             |
++-----------+----+-------------+  +------+----+----+-------------+
+ Integration|Server                Development|box
+            :                                 :
+            +---------------------------------+
+                Inconsistent Docker Hosts OS
+ 
+
+
+ 
+
+
+
+
+

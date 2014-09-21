@@ -1,0 +1,21 @@
+                                    +------------------------------+
+                                    | Mac or Windows Host  cFFD    |
+                                    |                         8080<+--+
++------------------------------+    |      +-----------------------+  |
+| Linux Host  c3C6             |    |      |                       |  |
+| (Ubuntu Trusty 64)      8080<+--+ |      |         Vagrant       |  |
+|                +-------------+  | |      |                  cEEF |  |
+|                |             |  | |      +-----------------------+  | Forwarded
+|                |   Vagrant   |  | |      | Docker Host VM        |  | ports
+|                |        cEEF |  | |      |(Ubuntu Trusty 64)     |  |
+|                +-------------+  | |      | c3C6    +-------------+  |
+|                | Docker      |  | |      |         | Docker      |  |
+|                | Container   |  | |      |         | Container   |  |
+|                |        c8CF |  | |      |         |    c8CF     |  |
+|           ^    |        8080<+-=+ |      |    ^    |        8080<+-=+
++-----------+----+-------------+    +------+----+----+-------------+
+ Integration|Server                  Development|box
+            :                                   :
+            +-----------------------------------+
+                Consistent Docker Hosts OS
+ 

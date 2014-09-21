@@ -4,7 +4,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "vertxdev" do |a|
     a.vm.provider "docker" do |d|
-      d.image = "l0rd/vertxdev:latest"
+      d.build_dir = "."
+      d.build_args = ["-t=l0rd/vertxdev"]
       d.ports = ["8080:8080"]
       d.name = "vertxdev"
       d.remains_running = true
