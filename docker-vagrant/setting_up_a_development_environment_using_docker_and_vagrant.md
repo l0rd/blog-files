@@ -1,4 +1,4 @@
-# Setting up a development environment using docker and vagrant
+# Setting up a development environment using Docker and Vagrant
 
 ![docker+vagrant](images/docker+vagrant_small.png)
 
@@ -10,7 +10,7 @@ FOR THE IMPATIENT: Jump to section *Using vagrant to make docker containers port
 
 * __It can take too long to set them up__
  
-   How long does it takes for a new developer to setup your current project's developement environment? The answer may depends on many factors (the project age, the number of developpers that have worked on it, etc...) but half a day or more is not an uncommon one.
+   How long does it takes for a new developer to setup your current project's development environment? The answer may depends on many factors (the project age, the number of developers that have worked on it, etc...) but half a day or more is not an uncommon one.
    
    Hey! It should be much faster than that: checkout a script and execute it. That's all. Two steps should be sufficient to setup your environment and get ready for development.
 
@@ -28,11 +28,11 @@ FOR THE IMPATIENT: Jump to section *Using vagrant to make docker containers port
 As a consequence development environment should have two characteristics:
  
 __Isolated__: you don't want to mess it up when testing some new tool or a different project.   
-__Repeatable__: the same environment should be consistently reproductible on every team member machine and on CI and production servers.
+__Repeatable__: the same environment should be consistently reproducible on every team member machine and on CI and production servers.
 
 Virtual environments ensure these features. But classic VMs are resource consuming. Developers need to code/build/test every few minutes and won't accept the virtualization overhead. 
 
-Here is where [Docker](https://www.docker.com/) becomes helpful. Its lightweight containers are extremely fast compared to classic VMs and have become extremely popular among developers. Here is an exceprt from the Docker blog that explains the reasons for this success: 
+Here is where [Docker](https://www.docker.com/) becomes helpful. Its lightweight containers are extremely fast compared to classic VMs and have become extremely popular among developers. Here is an excerpt from the Docker blog that explains the reasons for this success: 
 
 > In its first 12 months Docker usage rapidly spread among startups and early adopters who valued the platform’s ability to separate the concerns of application development management from those of infrastructure provisioning, configuration, and operations.  Docker gave these early users a new, faster way to build distributed apps as well as a “write once, run anywhere” choice of deployment from laptops to bare metal to VMs to private and public clouds.
 
@@ -70,7 +70,7 @@ To describe a container we need a Dockerfile:
 
 Dockerfiles are really straightforward. The reference can be found [here](https://docs.docker.com/reference/builder/).
 
-`FROM ubuntu:14.04` defines the base image which we rely on. You can find a comprehensive list of Docker base images at the [docker hub](https://registry.hub.docker.com/). For this exemple we use the one used by the [docker team](https://github.com/docker/docker/blob/master/Dockerfile) to build Docker.
+`FROM ubuntu:14.04` defines the base image which we rely on. You can find a comprehensive list of Docker base images at the [docker hub](https://registry.hub.docker.com/). For this example we use the one used by the [docker team](https://github.com/docker/docker/blob/master/Dockerfile) to build Docker.
 
 Subsequent lines describe modifications that will be applied on top of the base image:
 
@@ -79,17 +79,17 @@ Subsequent lines describe modifications that will be applied on top of the base 
 * Add vertx bin folder to the path
 * Create folder /usr/local/src and make it the default working directory
 
-Once we havec copied the Dockerfile we can build the Docker image:
+Once we have copied the Dockerfile we can build the Docker image:
 	
 	$ sudo docker build -t=vertxdev .
 
 ### Get the source code
 
-The image we just built has git installed. We can use it to fetch the source code from github:
+The image we just built has git installed. We can use it to fetch the source code from Github:
 
 	$ sudo docker run -t --rm -v /src/vertx/:/usr/local/src vertxdev git clone https://github.com/vert-x/vertx-examples.git
 	
-Note that git is run inside the container and the source code is therfore transferred there (in folder /usr/local/src precisely). To make the code persist, even after the container has been stopped and removed, we bind mount container's folder /usr/local/src to host folder /src/vertx using flag `-v /src/vertx/:/usr/local/src`. Whereas '--rm' destroy the container as soon as the `git clone` command has completed its execution.
+Note that git is run inside the container and the source code is therefore transferred there (in folder /usr/local/src precisely). To make the code persist, even after the container has been stopped and removed, we bind mount container's folder /usr/local/src to host folder /src/vertx using flag `-v /src/vertx/:/usr/local/src`. Whereas '--rm' destroy the container as soon as the `git clone` command has completed its execution.
 
 ### Build and run the application
 
@@ -97,7 +97,7 @@ Now that the source code has been fetched we will spin up a new container that b
     
     $ sudo docker run -d -v /src/vertx/:/usr/local/src -p 8080:8080 vertxdev vertx run vertx-examples/src/raw/java/httphelloworld/HelloWorldServer.java
     
-In opposition the prvious container this one won't be destroyed when it stops, expose port 8080 `-p 8080:8080` and is run in backround `-d`. To have a look at `vertx run` output:
+In opposition the previous container this one won't be destroyed when it stops, expose port 8080 `-p 8080:8080` and is run in background `-d`. To have a look at `vertx run` output:
    
     $ sudo docker logs
     Succeeded in deploying verticle
@@ -107,7 +107,7 @@ Let's test the application from the host using curl:
 	$ curl localhost:8080
 	Hello World
 	
-This simple example should be sufficient to point out how fast it is to run a Docker container. The overhead of running `git clone` and `vertx run` inside a Docker container is umpercievable.
+This simple example should be sufficient to point out how fast it is to run a Docker container. The overhead of running `git clone` and `vertx run` inside a Docker container is unperceivable.
 
 But this was a elementary environment to setup. In real life environments a Docker-only configuration has some shortcomings Vagrant can help to address.
 
@@ -115,15 +115,15 @@ But this was a elementary environment to setup. In real life environments a Dock
 
 Docker (actually [libcontainer](https://github.com/docker/libcontainer) which is a Docker module) still requires Linux kernel 3.8 or higher and x86_64 architecture. This bounds considerably the environments Docker can natively run on. 
 
-![Running Docker using Vagrant on Linux and other OSes](images/diagr1.png)
-
 Vagrant is an open-source software that provides a method for creating repeatable development environments across a range of operating systems. Vagrant uses providers to spin up isolated virtual environments. The default provider is Virtualbox and since v1.6 [docker-based development environment](http://www.vagrantup.com/blog/vagrant-1-6.html#features) are supported too. Compared to other tools that can help running Docker on non Linux platforms (e.g.  boot2docker), Vagrant has some important advantages:
 
-* On systems that don't supports Linux containers natively Vagrant automatically spins up a "host VM" to run Docker. On systems that support it natevely Vagrant just spins up a Docker container. That's trasparent from a user perspective.
+* On systems that don't supports Linux containers natively Vagrant automatically spins up a "host VM" to run Docker. On systems that support it natively Vagrant just spins up a Docker container. That's transparent for users.
 * Docker hosts are not limited to [TCL](http://distro.ibiblio.org/tinycorelinux/) (boot2docker) but can run Debian, Ubuntu, CoreOS etc...
 * Vagrant can orchestrate Docker containers: run multiple containers concurrently and link them together
 
-In the next three sections we will see each of these points in practice. 
+![Running Docker using Vagrant on Linux and other OSes](images/diagr1.png)
+
+In the next three sections we will cover each of these points. 
 
 ## Using vagrant to make Docker containers portable
 
@@ -164,7 +164,7 @@ Once we have copied the Vagrantfile in Dockerfile folder we can run `git clone` 
 
     $ vagrant docker-run vertxdev -- git clone https://github.com/vert-x/vertx-examples.git
 
-Like before, the container will be destroyed when `git clone` ends its execution. Note that we haven't built the image, Vagrant dit it automatically. On manual step less.
+Like before, the container will be destroyed when `git clone` ends its execution. Note that we haven't built the image, Vagrant did it automatically. On manual step less.
 
 ### Build and run the application
 
@@ -198,7 +198,7 @@ Once the box id retrieved we can test the HTTP server:
     $ vagrant ssh c62a174 -c "curl localhost:8080"
     Hello World
     
-## Haven't you said identical? How to customize the Docker host
+## Haven't you said identical? How to customise the Docker host
 
 On platforms that don't support containers, by default Vagrant spins up a Tiny Core Linux (boot2docker) Docker host. If our CI, staging or production environment don't run boot2docker (hopefully) we have a gap between our environments. That is virtually a breach. Let's try to fix it. 
 
@@ -251,7 +251,7 @@ As a result we are able to access the vertx HTTP server from within the main hos
 
 ![Identical Docker hosts on different environments and port forwarding](images/diagr3.png) 
 
-Of course host VMs are not limited to Ubuntu. More vagrant boxes can be found on [Vagrant Cloud](https://vagrantcloud.com). Intersting Docker-enabled boxes are hosts are boot2docker ([original](https://vagrantcloud.com/mitchellh/boxes/boot2docker) and [improved](https://vagrantcloud.com/yungsang/boxes/boot2docker)) and [CoresOS](https://vagrantcloud.com/yungsang/boxes/coreos).
+Of course host VMs are not limited to Ubuntu. More vagrant boxes can be found on [Vagrant Cloud](https://vagrantcloud.com). Interesting Docker-enabled boxes are hosts are boot2docker ([original](https://vagrantcloud.com/mitchellh/boxes/boot2docker) and [improved](https://vagrantcloud.com/yungsang/boxes/boot2docker)) and [CoresOS](https://vagrantcloud.com/yungsang/boxes/coreos).
 
 ## Orchestrating Docker containers using Vagrant
 
@@ -318,7 +318,7 @@ To start vertxsender and vertxreceiver replace the Vagrantfile with this one and
     ==> vertxsender: Received reply: pong
     ...
     
-Even if vertxsender and vertxreceiver had no knowldege of each other hostname and IP address, the vertx eventbus protocol has a discovering capability that let connect senders and receivers. For applications that don't have a similiar feature, Docker provide a [container linking option](https://docs.docker.com/userguide/dockerlinks/).  
+Even if vertxsender and vertxreceiver had no knowledge of each other hostname and IP address, the vertx eventbus protocol has a discovering capability that let connect senders and receivers. For applications that don't have a similar feature, Docker provide a [container linking option](https://docs.docker.com/userguide/dockerlinks/).  
 
 ### Linking containers
 
@@ -355,7 +355,7 @@ In this example we first run a Docker container (vertxdev) that starts up the He
 
     end
 
-The imporant part of this new Vagrantfile is the line `d.link("vertxdev:vertxdev")`. Thanks to it, vertxdev-client will be able to resolve the hostname `vertxdev` and therefore fullfil the HTTP request using the command `wget -qO - --save-headers http://vertxdev:8080`.
+The important part of this new Vagrantfile is the line `d.link("vertxdev:vertxdev")`. Thanks to it, vertxdev-client will be able to resolve the hostname `vertxdev` and therefore fulfil the HTTP request using the command `wget -qO - --save-headers http://vertxdev:8080`.
 
 To run the containers replace the Vagrantfile with this new one and run `vagrant up`. The `--no-parallel` option ensure that vertxdev container is started before vertxdev-client.  
 
@@ -373,7 +373,7 @@ Have a look at logs to verify what happened:
     
 ## Dude where is my IDE?
 
-Althought IDEs are an important part of a development environments we haven't talked about it yet. That's because graphical application aren't usually run in Docker containers. IDE as Eclipse or IntelliJ find their natual habitat in the main host with source code shared between the host and the containers using Docker volumes. That's what this section is about.
+Although IDEs are an important part of a development environments we haven't talked about it yet. That's because graphical application aren't usually run in Docker containers. IDE as Eclipse or IntelliJ find their natural habitat in the main host with source code shared between the host and the containers using Docker volumes. That's what this section is about.
 
 Vagrant comes with a `synced_folder` option to share folders between the docker container and the main host:
 
@@ -415,3 +415,9 @@ To test the application run `vagrant up`:
 	$ vagrant up
 	$ curl localhost:8080
 	I m in a docker container and I feel good
+
+## Conclusion
+
+Using Vagrant to control Docker containers can be useful if dealing with a mix of different platforms: some Docker-enabled and others not. In this scenario using Vagrant makes the process of setting up an environment consistent across different platforms.
+
+As an alternative to Vagrant, [Fig](http://www.fig.sh/) is certainly worth checking out. Docker has has hired its main developer and [is strongly supporting it](https://blog.docker.com/tag/fig/) as to tool to setup Docker based development environments.
