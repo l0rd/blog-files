@@ -119,8 +119,8 @@ Docker (actually [libcontainer](https://github.com/docker/libcontainer) which is
 
 Vagrant is an open-source software that provides a method for creating repeatable development environments across a range of operating systems. Vagrant uses providers to spin up isolated virtual environments. The default provider is Virtualbox and since v1.6 [docker-based development environment](http://www.vagrantup.com/blog/vagrant-1-6.html#features) are supported too. Compared to other tools that can help running Docker on non Linux platforms (e.g.  boot2docker), Vagrant has some important advantages:
 
-* On systems that don't supports Linux containers natively Vagrant automatically spins up a "host VM" to run Docker. On systems that support it natively Vagrant just spins up a Docker container. That's transparent for users.
-* Docker hosts are not limited to boot2docker (Virtualbox [Tiny Core Linux](http://distro.ibiblio.org/tinycorelinux/) image). Debian, Ubuntu, CoreOS and other Linux distos are supported too. And VM engines others than Virtualbox are supported (e.g. VMWare).
+* Configure it once and run it everywhere : Vagrant is just a Docker wrapper on systems that support Docker natively while it spins up a "host VM" to run containers on systems that don't support it. User don't have to bother wether Docker is supported natively or not : the same configuration will work on every OS.
+* Docker hosts are not limited to boot2docker (a Virtualbox image of [Tiny Core Linux](http://distro.ibiblio.org/tinycorelinux/)) but Debian, Ubuntu, CoreOS and other Linux distros are supported too. And can run can run on more stable VM managers than Virtualbox (e.g. VMWare).
 * Vagrant can orchestrate Docker containers: run multiple containers concurrently and link them together
 
 ![Running Docker using Vagrant on Linux and other OSes](images/diagr1.png)
@@ -202,7 +202,7 @@ Once the box id retrieved we can test the HTTP server:
     
 ## Haven't you said identical? How to customise the Docker host
 
-On platforms that don't support containers, by default Vagrant spins up a Tiny Core Linux (boot2docker) Docker host. If our CI, staging or production environment don't run boot2docker (hopefully) we have a gap between the configurations of these environments. That can virtually be the cause of a production bug, impossible to identify in developpment environment. Let's try to fix it.
+On platforms that don't support containers, by default Vagrant spins up a Tiny Core Linux (boot2docker) Docker host. If our CI, staging or production environment don't run boot2docker (hopefully) we have a gap between the configurations of these environments. That can virtually be the cause of a production bug, impossible to identify in development environment. Let's try to fix it.
 
 ![Different Docker hosts on different environments: virtually a breach](images/diagr2.png)
 
@@ -216,8 +216,8 @@ We will use a new Vagrantfile to define the Docker host VM. The following one is
 
       config.vm.provision "docker"
 
-      # The following line terminates all ssh connections. Therfore
-      # Vagrant will be forced to recconnect.
+      # The following line terminates all ssh connections. Therefore
+      # Vagrant will be forced to reconnect.
       # That's a workaround to have the docker command in the PATH
       config.vm.provision "shell", inline:
         "ps aux | grep 'sshd:' | awk '{print $2}' | xargs kill"
