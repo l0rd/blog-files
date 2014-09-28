@@ -38,7 +38,9 @@ Here is where [Docker](https://www.docker.com/) becomes helpful. Its lightweight
 
 ## Using Docker to configure an isolated and repeatable development environment
 
-As an example we are going to setup a Docker container that can build and test a [Vert.x](http://vertx.io/) HTTP server.
+As an example we are going to setup a Docker container that can build and test a [Vert.x](http://vertx.io/) HTTP server. 
+
+Vert.x is a lightweight application framework that encourages architectures of small, independent micro-services. A micro-service is "just a little stand-alone executable that communicates with other stand-alone executables" [(Uncle Bob)](http://blog.cleancoder.com/uncle-bob/2014/09/19/MicroServicesAndJars.html). We think it fits perfectly in a Docker container and that is why we choose it as an example here. 
 
 If you haven't already installed Docker do it first. You can refer to the [official doc](https://docs.docker.com/installation/) or use [get docker script](https://get.docker.io/) to install it. We assume in this section that we are running on Linux. Even if Docker can be installed on Windows and Mac too (with boot2docker), we are going to see in the next session how to do that using Vagrant and why it can be a better choice.
 
@@ -93,7 +95,7 @@ Note that git is run inside the container and the source code is therefore trans
 
 ### Build and run the application
 
-Now that the source code has been fetched we will spin up a new container that build and run a vertx sample: HelloWorldServer. Beware that `vertx run` both builds and executes the vertx application.
+Now that the source code has been fetched we will spin up a new container that builds and runs a vertx sample: HelloWorldServer. Beware that `vertx run` both builds and executes the vertx application.
     
     $ sudo docker run -d -v /src/vertx/:/usr/local/src -p 8080:8080 vertxdev vertx run vertx-examples/src/raw/java/httphelloworld/HelloWorldServer.java
     
@@ -118,7 +120,7 @@ Docker (actually [libcontainer](https://github.com/docker/libcontainer) which is
 Vagrant is an open-source software that provides a method for creating repeatable development environments across a range of operating systems. Vagrant uses providers to spin up isolated virtual environments. The default provider is Virtualbox and since v1.6 [docker-based development environment](http://www.vagrantup.com/blog/vagrant-1-6.html#features) are supported too. Compared to other tools that can help running Docker on non Linux platforms (e.g.  boot2docker), Vagrant has some important advantages:
 
 * On systems that don't supports Linux containers natively Vagrant automatically spins up a "host VM" to run Docker. On systems that support it natively Vagrant just spins up a Docker container. That's transparent for users.
-* Docker hosts are not limited to [TCL](http://distro.ibiblio.org/tinycorelinux/) (boot2docker) but can run Debian, Ubuntu, CoreOS etc...
+* Docker hosts are not limited to boot2docker (Virtualbox [Tiny Core Linux](http://distro.ibiblio.org/tinycorelinux/) image). Debian, Ubuntu, CoreOS and other Linux distos are supported too. And VM engines others than Virtualbox are supported (e.g. VMWare).
 * Vagrant can orchestrate Docker containers: run multiple containers concurrently and link them together
 
 ![Running Docker using Vagrant on Linux and other OSes](images/diagr1.png)
@@ -200,7 +202,7 @@ Once the box id retrieved we can test the HTTP server:
     
 ## Haven't you said identical? How to customise the Docker host
 
-On platforms that don't support containers, by default Vagrant spins up a Tiny Core Linux (boot2docker) Docker host. If our CI, staging or production environment don't run boot2docker (hopefully) we have a gap between our environments. That is virtually a breach. Let's try to fix it. 
+On platforms that don't support containers, by default Vagrant spins up a Tiny Core Linux (boot2docker) Docker host. If our CI, staging or production environment don't run boot2docker (hopefully) we have a gap between the configurations of these environments. That can virtually be the cause of a production bug, impossible to identify in developpment environment. Let's try to fix it.
 
 ![Different Docker hosts on different environments: virtually a breach](images/diagr2.png)
 
@@ -214,6 +216,9 @@ We will use a new Vagrantfile to define the Docker host VM. The following one is
 
       config.vm.provision "docker"
 
+      # The following line terminates all ssh connections. Therfore
+      # Vagrant will be forced to recconnect.
+      # That's a workaround to have the docker command in the PATH
       config.vm.provision "shell", inline:
         "ps aux | grep 'sshd:' | awk '{print $2}' | xargs kill"
           
@@ -263,7 +268,7 @@ In this section we deal with the simultaneous execution of multiple docker conta
 
 ![Multiple containers](images/diagr4.png) 
 
-As a first example we will use vertx [Event Bus Point to Point example](https://github.com/vert-x/vertx-examples/tree/master/src/raw/java/eventbus_pointtopoint). We exploit the same Dockerfile we defined at the beginning and configure two Docker containers within a new Vagrantfile: "vertxreceiver" and "vertxsender":
+As a first example we will use Vert.x [Event Bus Point to Point example](https://github.com/vert-x/vertx-examples/tree/master/src/raw/java/eventbus_pointtopoint). We exploit the same Dockerfile we defined at the beginning and configure two Docker containers within a new Vagrantfile: "vertxreceiver" and "vertxsender":
 
     ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
     DOCKER_HOST_NAME = "dockerhost"
@@ -299,6 +304,8 @@ As a first example we will use vertx [Event Bus Point to Point example](https://
 
     end        
 
+For both docker containers, `vagrant_mahchine`, the id of the Docker host VM, is `dockerhost`. Vagrant will be smart enough to reuse the same instance of `dockerhost` to run both containers.    
+
 To start vertxsender and vertxreceiver replace the Vagrantfile with this one and run `vagrant up`: 
 
     $ vagrant up
@@ -317,7 +324,7 @@ To start vertxsender and vertxreceiver replace the Vagrantfile with this one and
     ==> vertxsender: Received reply: pong
     ==> vertxsender: Received reply: pong
     ...
-    
+
 Even if vertxsender and vertxreceiver had no knowledge of each other hostname and IP address, the vertx eventbus protocol has a discovering capability that let connect senders and receivers. For applications that don't have a similar feature, Docker provide a [container linking option](https://docs.docker.com/userguide/dockerlinks/).  
 
 ### Linking containers
