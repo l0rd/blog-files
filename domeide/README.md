@@ -71,7 +71,7 @@ With these features in mind we built [doclipser](www.github.com/domeide/). An ec
 
 Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have compose yml files support but support a few Docker commands that allow you to build source files or launch runtime environments.
 
-![doclipser](doclipser_github.png)
+![doclipser](https://github.com/domeide/doclipser/raw/master/images/doclipserdemo.gif)
 
 
 ## domeide.github.io
