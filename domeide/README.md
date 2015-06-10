@@ -43,7 +43,7 @@ Oh Yeahhh! And with that we would love to see Dockerfiles support, Compose yml f
 
 Dockerfile support should come with syntax highilighting, autocomplete (dockerfile instructions popping out at your CTRL+SPACE) and syntax validation (syntax errors should be shown by your IDE before you `docker build`)
 
-![syntaxh](syntaxh.png)\ ![autocomplete](autocomplete.png)\ ![syntax verification](syntaxvalid.png)
+![syntaxh](/syntaxh.png)\ ![autocomplete](/autocomplete.png)\ ![syntax verification](/syntaxvalid.png)
 
 ### Compose yml file support
 
