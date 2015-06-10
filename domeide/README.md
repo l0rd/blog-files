@@ -49,20 +49,20 @@ Dockerfile support should come with syntax highilighting, autocomplete (dockerfi
 
 Even more interesting would be Compose yml file support. That would allow to define inter container relation as links and volumes and run multiple containers with one click from your editor. That is cool!
 
-![compose](compose.png)
+![compose](/compose.png)
 
 ### IDE Build system
 
 Of course you would need support for running containers from the IDE. Specifically containers that can build your source files. That could be even more easy if leveraging Docker language stacks.
 
-![buildsystems](buildsystems.png)
+![buildsystems](/buildsystems.png)
 
 
 ### IDE Runtime Environments
 
 And the last feature we want in our IDE is the possibility to run runtime enviroments inside Docker containers. Right from your IDE.
 
-![runenv](runenv.png)
+![runenv](/runenv.png)
 
 
 ## Introducing Doclipser
