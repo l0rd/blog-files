@@ -14,7 +14,7 @@ docker run gcc:5.1 gcc -o helloworld helloword.c
 The magic is that you can run it anywhere, you don't have to bother about libraries, conflicts or installing gcc. If it runs on your laptop it will run on the integration server too.
 
 ### Runtime environment
-The same apply to *runtime* *environments*. If you need to run your java web application within tomcat 8 you can just.
+The same apply to *runtime* *environments*. If you need to run your java web application within tomcat 8 you can just use:
 ```sh
 docker run tomcat:8 -v HelloWorld.war:/usr/local/tomcat/webapps/Helloworld.war 
 ```
