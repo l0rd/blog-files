@@ -1,13 +1,13 @@
 # Docker meets the IDE
 
-This blog post is about integrating Docker's magic into our IDEs. This will give us the opportunity to introduce a plugin to edit, build and run Docker containers inside Eclipse: [doclipser](www.github.com/domeide/)
+This blog post is about integrating Docker's magic into our IDEs. This will give us the opportunity to introduce a plugin to edit, build and run Docker containers inside Eclipse: [doclipser](http://www.github.com/domeide/)
 
 ## Docker in development environments
 
 Before going into the details of Docker and IDEs integration, let's argument why we think docker has to be in our list of essentials development tools.
 
 ### Build system
-First of all, Docker allow us to make our *build* *environments* portable, repeatable and isolated. Let's make an example: you need to build a C using gcc v5.1. All you need to do is run the following command (assuming, of course, that you have docker installed):
+First of all, Docker allow us to make our *build* *environments* portable, repeatable and isolated. Let's make an example: you need to build a C project using gcc v5.1. All you need to do is run the following command (assuming, of course, that you have docker installed):
 ```sh
 docker run gcc:5.1 gcc -o helloworld helloword.c
 ```
@@ -22,7 +22,7 @@ Again you don't have to worry about dependencies, platforms configurations or li
 
 ## Docker and IDEs
 
-Ok, it should be clear why Docker is usefull for development now. And we have illustrated that with a bunch of commands you can use on your favorite shell. And we love our shells. The problem is that a trait of remarcable developers is [inspired laziness](http://blog.codinghorror.com/get-me-the-laziest-people-money-can-buy/). This mean that if we are coding inside our favorite IDE we don't want to get outside of it. We want to run containers right from the IDE.
+Ok, it should be clear why Docker is useful for development now. And we have illustrated that with a bunch of commands you can use on your favorite shell. And we love our shells. The problem is that a trait of remarcable developers is [inspired laziness](http://blog.codinghorror.com/get-me-the-laziest-people-money-can-buy/). This mean that if we are coding inside our favorite IDE we don't want to get outside of it. We want to run containers right from the IDE.
 
 Unfortunately Docker isn't supported by major IDEs right now.
 
@@ -33,7 +33,7 @@ So how would you like to see Docker integrated in your IDE?
 ```sh
 docker run eclispse
 ```
-Naaaaa....That not the way containers works. It's still to tricky and not portable to run graphical applications inside containers.
+Naaaaa....That not the way containers works. It's still too tricky and not portable to run graphical applications inside containers.
 
 *Would you run containers from within your IDE?*
 
@@ -67,7 +67,7 @@ And the last feature we want in our IDE is the possibility to run runtime enviro
 
 ## Introducing Doclipser
 
-With these features in mind we built [doclipser](www.github.com/domeide/). An eclipse plugin to edit, build and run docker containers.
+With these features in mind we built [doclipser](http://www.github.com/domeide/). An eclipse plugin to edit, build and run docker containers.
 
 Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have compose yml files support but support a few Docker commands that allow you to build source files or launch runtime environments.
 
@@ -76,7 +76,7 @@ Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax v
 
 ## domeide.github.io
 
-Doclipser isn't the only tool that brings Docker inside your IDE. We are building a github page to collect all of these plugins: [domeide.github.io](domeide.github.io). Here are some of these :
+Doclipser isn't the only tool that brings Docker inside your IDE. We are building a github page to collect all of these plugins: [domeide.github.io](http://domeide.github.io). Here are some of these :
 
 * [Sublime Docker](https://packagecontrol.io/packages/Docker%20Based%20Build%20Systems)
 * [IntelliJ IDEA 14.1](http://blog.jetbrains.com/idea/2015/03/docker-support-in-intellij-idea-14-1/)
