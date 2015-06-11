@@ -22,7 +22,7 @@ Again you don't have to worry about dependencies, platforms configurations or li
 
 ## Docker and IDEs
 
-Ok, it should be clear why Docker is useful for development now. And we have illustrated that with a bunch of commands you can use on your favorite shell. And we love our shells. The problem is that a trait of remarkable developers is [inspired laziness](http://blog.codinghorror.com/get-me-the-laziest-people-money-can-buy/). This mean that if we are coding inside our favorite IDE we don't want to get outside of it. We want to run containers right from the IDE.
+Ok, it should be clear why Docker is useful for development now. And we have illustrated that with a bunch of commands you can use on your favorite shell. And we love our shells. The problem is that a trait of remarkable developers is [inspired laziness](http://blog.codinghorror.com/get-me-the-laziest-people-money-can-buy/). This means that if we are coding inside our favorite IDE we don't want to get outside of it. We want to run containers right from the IDE.
 
 Unfortunately Docker isn't supported by major IDEs right now.
 
@@ -83,4 +83,4 @@ Doclipser isn't the only tool that brings Docker inside your IDE. We are buildin
 * [Eclipse JBoss Tools](http://tools.jboss.org/blog/2015-03-30-Eclipse_Docker_Tooling.html)
 * [Visual Studio 2015 RC Tools for Docker - Preview extension](https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0)
 
-Do you have any tool do you want to share ?
+Do you have any tool you want to share ?
