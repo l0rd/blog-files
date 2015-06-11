@@ -4,10 +4,10 @@ This blog post is about integrating Docker's magic into our IDEs. This will give
 
 ## Docker in development environments
 
-Before going into the details of Docker and IDEs integration, let's argument why we think docker has to be in our list of essentials development tools.
+Before going into the details of Docker and IDEs integration, let's argument why we think Docker has to be in our list of essentials development tools.
 
 ### Build system
-First of all, Docker allow us to make our *build* *environments* portable, repeatable and isolated. Let's make an example: you need to build a C file using gcc v5.1. All you need to do is run the following command (assuming, of course, that you have docker installed):
+First of all, Docker allows us to make our *build* *environments* portable, repeatable and isolated. Let's make an example: you need to build a C file using gcc v5.1. All you need to do is run the following command (assuming, of course, that you have Docker installed):
 ```sh
 docker run gcc:5.1 gcc -o helloworld helloword.c
 ```
@@ -33,15 +33,15 @@ So how would you like to see Docker integrated in your IDE?
 ```sh
 docker run eclipse
 ```
-Naaaaa....That's not the way containers works. It's still too tricky and not portable to run graphical applications inside containers.
+Naaaaa....That's not the way containers work. It's still too tricky and not portable to run graphical applications inside containers.
 
 *Would you run containers from within your IDE?*
 
-Oh Yeahhh! And with that we would love to see Dockerfile support, Compose yml files support, IDE build systems and runtime environment inside containers. Let's see the details:
+Oh Yeahhh! And with that we would love to see Dockerfile support, Compose yml files support, IDE build systems and runtime environment running inside containers. Let's see the details:
 
 ### Dockerfile support
 
-Dockerfile support should come with syntax highlighting, autocomplete (dockerfile instructions popping out on your CTRL+SPACE) and syntax validation (syntax errors should be shown by your IDE before you `docker build`)
+Dockerfile support should come with syntax highlighting, autocomplete (dockerfile instructions popping out when hitting  CTRL+SPACE) and syntax validation (syntax errors should be shown by your IDE before you `docker build`)
 
 ![syntaxh](/syntaxh.png)\ ![autocomplete](/autocomplete.png)\ ![syntax verification](/syntaxvalid.png)
 
@@ -67,9 +67,9 @@ And the last feature we want in our IDE is the possibility to launch runtime env
 
 ## Introducing Doclipser
 
-With these features in mind we built [doclipser](http://www.github.com/domeide/). An eclipse plugin to edit, build and run docker containers.
+With these features in mind we built [doclipser](http://www.github.com/domeide/). An eclipse plugin to edit, build and run Docker containers.
 
-Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have compose yml file support but supports a few Docker commands that allow you to build source files or launch runtime environments.
+Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have Compose yml file support but supports a few Docker commands that allow you to build source files or launch runtime environments.
 
 There is another great [eclipse plugin from JBoss](http://tools.jboss.org/blog/2015-03-30-Eclipse_Docker_Tooling.html) that has a slightly different approach. The JBoss Eclipse Docker tooling provides a more advanced management of Docker images and containers without Dockerfile support. Doclipser focus on editing and running containers through the support of Dockerfiles and, in future releases, Compose yml file too.
 
