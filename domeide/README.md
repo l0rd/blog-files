@@ -33,7 +33,7 @@ So how would you like to see Docker integrated in your IDE?
 ```sh
 docker run eclipse
 ```
-Naaaaa....That not the way containers works. It's still too tricky and not portable to run graphical applications inside containers.
+Naaaaa....That's not the way containers works. It's still too tricky and not portable to run graphical applications inside containers.
 
 *Would you run containers from within your IDE?*
 
@@ -41,7 +41,7 @@ Oh Yeahhh! And with that we would love to see Dockerfile support, Compose yml fi
 
 ### Dockerfile support
 
-Dockerfile support should come with syntax highlighting, autocomplete (dockerfile instructions popping out at your CTRL+SPACE) and syntax validation (syntax errors should be shown by your IDE before you `docker build`)
+Dockerfile support should come with syntax highlighting, autocomplete (dockerfile instructions popping out on your CTRL+SPACE) and syntax validation (syntax errors should be shown by your IDE before you `docker build`)
 
 ![syntaxh](/syntaxh.png)\ ![autocomplete](/autocomplete.png)\ ![syntax verification](/syntaxvalid.png)
 
@@ -53,7 +53,7 @@ Even more interesting would be Compose yml file support. That would allow to def
 
 ### IDE Build system
 
-Of course you would need support for running containers from the IDE. Specifically containers that can build your source files. That could be even more easy if leveraging Docker language stacks.
+Of course you would need support for running containers from the IDE. Specifically containers that can build your source files. That could be even easier if leveraging Docker language stacks.
 
 ![buildsystems](/buildsystems.png)
 
@@ -69,7 +69,7 @@ And the last feature we want in our IDE is the possibility to launch runtime env
 
 With these features in mind we built [doclipser](http://www.github.com/domeide/). An eclipse plugin to edit, build and run docker containers.
 
-Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have compose yml file support but support a few Docker commands that allow you to build source files or launch runtime environments.
+Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have compose yml file support but supports a few Docker commands that allow you to build source files or launch runtime environments.
 
 ![doclipser](https://github.com/domeide/doclipser/raw/master/images/doclipserdemo.gif)
 
