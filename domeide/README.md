@@ -1,6 +1,6 @@
 # Docker meets the IDE
 
-This blog post is about integrating Docker's magic into our IDEs. This will give us the opportunity to introduce a plugin to edit, build and run Docker containers inside Eclipse: [doclipser](http://www.github.com/domeide/)
+This blog post is about integrating Docker's magic into our IDEs. This will give us the opportunity to introduce a plugin to edit, build and run Docker containers inside Eclipse: [doclipser](https://github.com/domeide/doclipser)
 
 ## Docker in development environments
 
@@ -22,7 +22,7 @@ Again you don't have to worry about dependencies, platforms configurations or li
 
 ## Docker and IDEs
 
-Ok, it should be clear why Docker is useful for development now. And we have illustrated that with a bunch of commands you can use on your favorite shell. And we love our shells. The problem is that a trait of remarcable developers is [inspired laziness](http://blog.codinghorror.com/get-me-the-laziest-people-money-can-buy/). This mean that if we are coding inside our favorite IDE we don't want to get outside of it. We want to run containers right from the IDE.
+Ok, it should be clear why Docker is useful for development now. And we have illustrated that with a bunch of commands you can use on your favorite shell. And we love our shells. The problem is that a trait of remarkable developers is [inspired laziness](http://blog.codinghorror.com/get-me-the-laziest-people-money-can-buy/). This mean that if we are coding inside our favorite IDE we don't want to get outside of it. We want to run containers right from the IDE.
 
 Unfortunately Docker isn't supported by major IDEs right now.
 
