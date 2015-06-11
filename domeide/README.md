@@ -31,13 +31,13 @@ So how would you like to see Docker integrated in your IDE?
 *Would you run your IDE inside a container?*
 
 ```sh
-docker run eclispse
+docker run eclipse
 ```
 Naaaaa....That not the way containers works. It's still to tricky and not portable to run graphical applications inside containers.
 
 *Would you run containers from within your IDE?*
 
-Oh Yeahhh! And with that we would love to see Dockerfiles support, Compose yml files support, IDE build systems and running environment running inside containers. Let's see the details:
+Oh Yeahhh! And with that we would love to see Dockerfiles support, Compose yml files support, IDE build systems and running environment inside containers. Let's see the details:
 
 ### Dockerfile support
 
