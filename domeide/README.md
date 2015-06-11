@@ -37,7 +37,7 @@ Naaaaa....That's not the way containers works. It's still too tricky and not por
 
 *Would you run containers from within your IDE?*
 
-Oh Yeahhh! And with that we would love to see Dockerfile support, Compose yml files support, IDE build systems and running environment inside containers. Let's see the details:
+Oh Yeahhh! And with that we would love to see Dockerfile support, Compose yml files support, IDE build systems and runtime environment inside containers. Let's see the details:
 
 ### Dockerfile support
 
@@ -70,6 +70,8 @@ And the last feature we want in our IDE is the possibility to launch runtime env
 With these features in mind we built [doclipser](http://www.github.com/domeide/). An eclipse plugin to edit, build and run docker containers.
 
 Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have compose yml file support but supports a few Docker commands that allow you to build source files or launch runtime environments.
+
+There is another great [eclipse plugin from JBoss](http://tools.jboss.org/blog/2015-03-30-Eclipse_Docker_Tooling.html) that has a slightly different approach. The JBoss Eclipse Docker tooling provides a more advanced management of Docker images and containers without Dockerfile support. Doclipser focus on editing and running containers through the support of Dockerfiles and, in future releases, Compose yml file too.
 
 ![doclipser](https://github.com/domeide/doclipser/raw/master/images/doclipserdemo.gif)
 
