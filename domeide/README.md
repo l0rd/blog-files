@@ -4,10 +4,10 @@ This blog post is about integrating Docker's magic into our IDEs. This will give
 
 ## Docker in development environments
 
-Before going into the details of Docker and IDEs integration, let's argument why we think docker has to be in our list of essentials development tools.
+Before going into the details of Docker and IDEs integration, let's argument why we think Docker has to be in our list of essentials development tools.
 
 ### Build system
-First of all, Docker allow us to make our *build* *environments* portable, repeatable and isolated. Let's make an example: you need to build a C using gcc v5.1. All you need to do is run the following command (assuming, of course, that you have docker installed):
+First of all, Docker allows us to make our *build* *environments* portable, repeatable and isolated. Let's make an example: you need to build a C using gcc v5.1. All you need to do is run the following command (assuming, of course, that you have Docker installed):
 ```sh
 docker run gcc:5.1 gcc -o helloworld helloword.c
 ```
@@ -22,7 +22,7 @@ Again you don't have to worry about dependencies, platforms configurations or li
 
 ## Docker and IDEs
 
-Ok, it should be clear why Docker is usefull for development now. And we have illustrated that with a bunch of commands you can use on your favorite shell. And we love our shells. The problem is that a trait of remarcable developers is [inspired laziness](http://blog.codinghorror.com/get-me-the-laziest-people-money-can-buy/). This mean that if we are coding inside our favorite IDE we don't want to get outside of it. We want to run containers right from the IDE.
+Ok, it should be clear why Docker is usefull for development now. And we have illustrated that with a bunch of commands you can use on your favorite shell. And we love our shells. The problem is that a trait of remarkable developers is [inspired laziness](http://blog.codinghorror.com/get-me-the-laziest-people-money-can-buy/). This means that if we are coding inside our favorite IDE we don't want to get outside of it. We want to run containers right from the IDE.
 
 Unfortunately Docker isn't supported by major IDEs right now.
 
@@ -33,15 +33,15 @@ So how would you like to see Docker integrated in your IDE?
 ```sh
 docker run eclispse
 ```
-Naaaaa....That not the way containers works. It's still to tricky and not portable to run graphical applications inside containers.
+Naaaaa....That's not the way containers work. It's still too tricky and not portable to run graphical applications inside containers.
 
 *Would you run containers from within your IDE?*
 
-Oh Yeahhh! And with that we would love to see Dockerfiles support, Compose yml files support, IDE build systems and running environment running inside containers. Let's see the details:
+Oh Yeahhh! And with that we would love to see dockerfiles support, Compose yml files support, IDE build systems and running environment running inside containers. Let's see the details:
 
 ### Dockerfile support
 
-Dockerfile support should come with syntax highilighting, autocomplete (dockerfile instructions popping out at your CTRL+SPACE) and syntax validation (syntax errors should be shown by your IDE before you `docker build`)
+Dockerfile support should come with syntax highlighting, autocomplete (dockerfile instructions popping out when hitting  CTRL+SPACE) and syntax validation (syntax errors should be shown by your IDE before you `docker build`)
 
 ![syntaxh](/syntaxh.png)\ ![autocomplete](/autocomplete.png)\ ![syntax verification](/syntaxvalid.png)
 
@@ -53,7 +53,7 @@ Even more interesting would be Compose yml file support. That would allow to def
 
 ### IDE Build system
 
-Of course you would need support for running containers from the IDE. Specifically containers that can build your source files. That could be even more easy if leveraging Docker language stacks.
+Of course you would need support for running containers from the IDE. Specifically containers that can build your source files. That could be even easier if leveraging Docker language stacks.
 
 ![buildsystems](/buildsystems.png)
 
@@ -67,9 +67,9 @@ And the last feature we want in our IDE is the possibility to run runtime enviro
 
 ## Introducing Doclipser
 
-With these features in mind we built [doclipser](www.github.com/domeide/). An eclipse plugin to edit, build and run docker containers.
+With these features in mind we built [doclipser](www.github.com/domeide/). An eclipse plugin to edit, build and run Docker containers.
 
-Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have compose yml files support but support a few Docker commands that allow you to build source files or launch runtime environments.
+Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have Compose yml files support but supports a few Docker commands that allow you to build source files or launch runtime environments.
 
 ![doclipser](https://github.com/domeide/doclipser/raw/master/images/doclipserdemo.gif)
 
