@@ -67,18 +67,21 @@ And the last feature we want in our IDE is the possibility to launch runtime env
 
 ## Introducing Doclipser
 
-With these features in mind we built [doclipser](http://www.github.com/domeide/). An eclipse plugin to edit, build and run Docker containers.
+With these features in mind we built [doclipser](http://www.github.com/domeide/doclipser). An eclipse plugin to edit, build and run Docker containers.
 
 Doclipser has Dockerfile support: syntax highlighting, autocomplete and syntax verification. It still doesn't have Compose yml file support but supports a few Docker commands that allow you to build source files or launch runtime environments.
 
-There is another great [eclipse plugin from JBoss](http://tools.jboss.org/blog/2015-03-30-Eclipse_Docker_Tooling.html) that has a slightly different approach. The JBoss Eclipse Docker tooling provides a more advanced management of Docker images and containers without Dockerfile support. Doclipser focus on editing and running containers through the support of Dockerfiles and, in future releases, Compose yml file too.
+doclipser is not the only Docker eclipse plugin. There is the great [Eclipse Docker Tooling (EDT)]((http://tools.jboss.org/blog/2015-03-30-Eclipse_Docker_Tooling.html)) too. It's packaged with the Eclipse Linux Tools and maintained by JBoss. Even if they both make it possible to work with Docker from within the IDE, doclipser and EDT have two different approaches:
+
+* doclipser focus on editing and running containers through the support of Dockerfiles and, in future releases, Compose yml file
+* EDT has a more advanced management of Docker images and containers but lacks the support for Dockerfiles.
 
 ![doclipser](https://github.com/domeide/doclipser/raw/master/images/doclipserdemo.gif)
 
 
 ## domeide.github.io
 
-Doclipser isn't the only tool that brings Docker inside your IDE. We are building a github page to collect all of those plugins: [domeide.github.io](domeide.github.io). Here are some of these :
+Doclipser isn't the only tool that brings Docker inside your IDE. We are building a github page to collect all of those plugins: [domeide.github.io](https://domeide.github.io). Here are some of these :
 
 * [Sublime Docker](https://packagecontrol.io/packages/Docker%20Based%20Build%20Systems)
 * [IntelliJ IDEA 14.1](http://blog.jetbrains.com/idea/2015/03/docker-support-in-intellij-idea-14-1/)
