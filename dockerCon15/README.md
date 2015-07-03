@@ -22,9 +22,11 @@ Le projet qui a remporté le premier prix est un client Docker vocal pour [Corta
 
 Nous avons participé à l'épreuve avec le projet [the Phedds](https://github.com/mjbright/thephedds/). Une console web qui permet de créer et gérer des conteneurs en affichant des informations en modalité graphique avec D3.js. Nous n'avons pas été retenus parmi les 12 projets qui ont participé mais nous nous sommes bien amusés avec les autres membres du team [Mike](https://twitter.com/mjbright), [Ryan](https://twitter.com/iamnayr), [Kalyan](https://twitter.com/kalyathatikonda), [Zorigt](https://twitter.com/zorig) et Murali.
 
-Et le prix pour le meilleur t-shirt de la conférence l'a gagné a notre avis celui offert à tous les participants de l'hackathon et qui a été réalisés par CommitStrip. Oui, encore eux, et nous sommes des grands fans chez Zenika !
+Et le prix pour le meilleur t-shirt de la conférence l'a gagné celui-ci :
 
 ![Hackathon Tshirts](HackathonTShirts.jpg)
+
+Il a été offert à tous les participants du Hackathon et a été réalisés par CommitStrip. Et oui, encore eux, ils font les t-shirt pour l'hackathon et y participent comme développeurs : la classe ! Et nous sommes des grands fans chez Zenika !
 
 ## 1er jour - Les nouveautés de la keynote
 C'est Ben Golub, le CEO de Docker, le premier à monter scène. Après quelques remerciements il passe la parole au CTO Solomon Hykes qui commence par rappeler la mission de Docker :
