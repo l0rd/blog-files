@@ -1,29 +1,28 @@
 # DockerCon 2015 - La grande messe de Docker
 
-Le 22 et 23 juin dernier s'est déroulée à San Francisco la DockerCon. Nous y étions invités en tant que vainqueurs du Docker Hackathon de décembre et nous n'avons pas été décus : ambiance joviale, talks de qualité et grandes annonces ont rendu cet evennment exceptionnel.
+Les 22 et 23 juin derniers s'est déroulée à San Francisco la DockerCon. Nous étions invités en tant que gagnants du Docker Hackathon de décembre et nous n'avons pas été déçus : ambiance joviale, talks de qualité et grandes annonces ont rendu cet evenement exceptionnel.
 
 ![Docker Con](DockerConBanner.jpg)
 
 ## DockerCon Hackathon
 
-![Hackathon](HackathonBanner.jpg)
+![Hackathon](HackathonBanner.png)
 
-La DockerCon commence samedi 20 avec le Hackathon : une compétions ouverte à tout développeur qui a envie de se lancer, en à peine 24h, dans le développement d'un projet from scratch autour de Docker. Deux-cent développeurs sont au rendez-vous et une 40ène de projets seront soumis. Tous les aspects sont représentés : orchestration, sécurité, monitoring etc...Parmi les nombreux projets en voici quelques-uns que nous avons particulierement aprécié :
+Comme le veut la tradition, le week-end qui précède la DockerCon se déroule un Hackathon : une compétition ouverte à tout développeur qui aurait envie de se lancer, en à peine 24h, dans le développement d'un nouveau projet autour de Docker. 200 développeurs étaient au rendez-vous et une quarantaine de projets y étaient soumis. Tous les aspects étaient représentés : orchestration, sécurité, monitoring. Parmi les nombreux projets en voici quelques-uns que nous avons particulièrement appréciés :
 * Build and run iOS apps with the docker client: https://github.com/jkingyens/dockerthon
 * Security updates through Docker: https://github.com/advanderveer/docksec
 * LightningStorm: Multiple providers for Kitematic using docker-machine (e.g. Kitematic on steroids): https://github.com/fsoppelsa/kitematic
 * Calcul distribué avec Docker et Rancher par l'équipe de [CommitStrip|http://www.commitstrip.com/en/about/] (@ipernet et @ThomasGX ): https://github.com/ipernet/docker-hackathon-2015
 
-Le projet qui remporte le premier prix est un client Docker vocal pour [Cortana|https://fr.wikipedia.org/wiki/Cortana_(Microsoft)], le "Siri" de Microsoft, développé par @HaishiBai2010 et @danielfe.
+Le projet qui a remporté le premier prix est un client Docker vocal pour [Cortana|https://fr.wikipedia.org/wiki/Cortana_(Microsoft)], le "Siri" de Microsoft, développé par @HaishiBai2010 et @danielfe.
 
-Nous avons participé à l'épreuve avec le projet [the Phedds|https://github.com/mjbright/thephedds/] qui a suscité de l'interet avant et après le hackathon mais qui n'a pas été retenu parmi les 12 projets qui ont participé à la phase finale.
+Nous avons participé à l'épreuve avec le projet (the Phedds)[https://github.com/mjbright/thephedds/] qui a suscité de l'intérêt avant et après le hackathon mais qui n'a pas été retenu parmi les 12 projets qui ont participé à la phase finale.
 
-Ci dessous les t-shirts offertes aux participants du Hackathon réalisés par CommitStrip. Oui encore eux et nous sommes des grands fan chez Zenika !
-
-((/public/Billet_0xxx/HackathonTShirts.png|Hackathon Tshirts|C))
+Tous les participants ont reçu des t-shirts réalisés par CommitStrip. Oui, encore eux, et nous sommes des grands fans chez Zenika !
+![Hackathon Tshirts](HackathonTShirts.png)
 
 ## 1er jour - Les nouveautés de la keynote
-C'est Ben Golub, le CEO de Docker, le premier à monter scène. Après quelques remerciment il passe la parole au CTO Solomon Hykes qui commence par rappeler la mission de Docker :
+C'est Ben Golub, le CEO de Docker, le premier à monter scène. Après quelques remerciments il passe la parole au CTO Solomon Hykes qui commence par rappeler la mission de Docker :
 
 "Our mission is to build tools for mass innovations" 
 ((/public/Billet_0xxx/ToolsForMassInnovation.png|Tools for mass innovation|C))
