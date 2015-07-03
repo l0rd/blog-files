@@ -31,11 +31,10 @@ Il a été offert à tous les participants du Hackathon et a été réalisés pa
 ## 1er jour - Les nouveautés de la keynote
 C'est Ben Golub, le CEO de Docker, le premier à monter scène. Après quelques remerciements il passe la parole au CTO Solomon Hykes qui commence par rappeler la mission de Docker :
 
-"Our mission is to build tools for mass innovations" 
-
 ![](ToolsForMassInnovation.png)
 
 Le discours de Solomon est clair et convaincant. Le logiciel est le moyen plus puissant aujourd'hui pour innover. Et Docker veut simplifier au maximum le développement et la pubblication de logiciel. Les quattres objectifs que Docker se donne pour les prochaines années en découlent: 
+
 1. Reinvent the developer toolbox
 2. Build better plumbings 
 3. Open Standards
