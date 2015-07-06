@@ -20,13 +20,13 @@ Parmi les nombreux projets en voici quelques-uns que nous avons particulièremen
 
 Le projet qui a remporté le premier prix est un client Docker vocal pour [Cortana](https://fr.wikipedia.org/wiki/Cortana_(Microsoft)), le "Siri" de Microsoft, développé par [@HaishiBai2010](https://twitter.com/HaishiBai2010) et [@danielfe](https://twitter.com/danielfe).
 
-Nous avons participé à l'épreuve avec le projet [the Phedds](https://github.com/mjbright/thephedds/). Une console web qui permet de créer et gérer des conteneurs en affichant des informations en modalité graphique avec D3.js. Nous n'avons pas été retenus parmi les 12 projets qui ont participé mais nous nous sommes bien amusés avec les autres membres du team [Mike](https://twitter.com/mjbright), [Ryan](https://twitter.com/iamnayr), [Kalyan](https://twitter.com/kalyathatikonda), [Zorigt](https://twitter.com/zorig) et Murali.
+Nous avons participé à l'épreuve avec le projet [the Phedds](https://github.com/mjbright/thephedds/). Une console web qui permet de créer et gérer des conteneurs en affichant des informations en modalité graphique avec D3.js. Nous n'avons pas été retenus parmi les 12 projets qui ont participé mais nous nous sommes bien amusés avec les autres membres du team : [Mike](https://twitter.com/mjbright), [Ryan](https://twitter.com/iamnayr), [Kalyan](https://twitter.com/kalyathatikonda), [Zorigt](https://twitter.com/zorig) et Murali.
 
 Et le prix pour le meilleur t-shirt de la conférence l'a gagné celui-ci :
 
 ![Hackathon Tshirts](HackathonTShirts.jpg)
 
-Il a été offert à tous les participants du Hackathon et a été réalisés par CommitStrip. Et oui, encore eux, ils font les t-shirt pour l'hackathon et y participent comme développeurs : la classe ! Et nous sommes des grands fans chez Zenika !
+Offert à tous les participants du Hackathon et il a été réalisés par CommitStrip. Et oui, encore eux, ils font les t-shirt pour l'hackathon et y participent comme développeurs : la classe ! Chez Zenika nous sommes des grands fans !
 
 ## 1er jour - Les nouveautés de la keynote
 C'est Ben Golub, le CEO de Docker, le premier à monter scène. Après quelques remerciements il passe la parole au CTO Solomon Hykes qui commence par rappeler la mission de Docker :
@@ -46,7 +46,7 @@ Les annonces qui suivent au cours de cette keynote addressent les trois permiers
 
 ![](Networking.png)
 
-Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté plus importante de cette version est l'integration du nouveau module réseau [libnetwork|https://github.com/docker/libnetwork] dans le engine. Cela rend plus flexible la configuration réseau (grace à un systeme de plugin que nous verrons plus tard) mais surtout le support de configurations multihost. C'est a dire qu'il sera possible établir des liens (*links*) entre conteneurs sur des hosts distants. Cette dernière fonctionalitée n'est pas livrée avec la version 1.7 mais est disponible uniquement avec [la release experimentale | https://experimental.docker.com/].
+Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté plus importante de cette version est l'integration de [libnetwork|https://github.com/docker/libnetwork], le nouveau module réseau, dans le engine. Cela rend plus flexible la configuration réseau (grace à un systeme de plugin que nous verrons plus tard) mais surtout le support de configurations multihost. C'est a dire qu'il sera possible établir des liens, (les *links*), entre conteneurs sur des hosts distants. Cette dernière fonctionalitée n'est pas livrée avec la version 1.7 mais est disponible uniquement avec [la release experimentale | https://experimental.docker.com/].
 
 ![](MachineCompose.png)
 
@@ -57,21 +57,35 @@ Mais ceci n'a pas empéché d'ajouter deux nouvautés majeures en ce qui concern
 
 ![](Extensions.png)
 
-Et on arrive à une des annonces plus attendues : le systeme de plugin Docker.
-Le besoin est clair : Docker est relativement jeune et ne peux pas disposer de toutes les fonctionalités demandées par ses clients. Des    utilisé dans des environnements très etherogènes et des  et les derniers mois les demandes de 
-https://clusterhq.com/2014/12/08/docker-extensions/
-http://blog.docker.com/2015/06/extending-docker-with-plugins/
+Et on arrive à une des annonces plus attendues : les plugins pour Docker. Annoncés à la [fin de 2014](https://clusterhq.com/2014/12/08/docker-extensions/), ces point d'extension pour le engine Docker voient le jour aujourd'hui dans le channel experimental de Docker. 
+
+Pour l'instant deux types de plugins ont été présentés :
+* Network plugins: extensions pour connecter des containers qui sont sur des machines ou des réseaux distants
+* Volume plugins: extensions pour persister les volumes des conteneurs
+
+Les autres typologies de plugin disponibles sont scheduler et service discovery. D'autres seront bientôt livrées.
+
+Des premiers exemples de plugins sont :
+Volumes plugins: [Flocker](http://clusterhq.com/docker-plugin)
+Network plugins: [Weave](http://blog.weave.works/2015/06/22/weave-as-a-docker-network-plugin/), [Project Calico](http://www.projectcalico.org/calico-docker-1-7-libnetwork/), [Nuage Networks](http://www.nuagenetworks.net/libnetwork-is-license-to-hyper-scale-for-docker-and-sdn/), [Cisco](http://blogs.cisco.com/datacenter/docker-and-the-rise-of-microservices), [VMware](http://blogs.vmware.com/networkvirtualization/2015/06/vmware-docker-networking.html), Microsoft et [Midokura](http://blog.midonet.org/docker-networking-midonet/)
 
 ### Docker plumbing project et notary
 
+Une grande partie du code de Docker (50%) sert à la géstion de l'infrastructure, ce qu'on appelle **infrastructure plumbing**. Il s'agit de tout ce qui n'est pas fonctionnel à la géstion des conteneurs. 
+
+Plus le projet grandit plus on sent le besoin de séparer la partie infrastructure de la partie conteneurs. Et Solomon a annoncé que Docker s'engage à effectuer cette séparation. Cela commence avec deux projets : runC, auquel est dédié le prochain paragraphe, et notary, un outils pour sécuriser les mises à jour. 
+
 ![](Notary.png)
 
-TODO
+[Notary](https://github.com/docker/notary) se base sur [The Update Framework](http://theupdateframework.com/) pour vérifier l'integrité et la source des artefacts téléchargés sur Internet. Dans l'ésprit du plumbing project, cet outil est séparé de Docker et du Hub et pourrait être réutilisé par d'autres projets. Son utilité ? La vérification des images téléchargées avec un `docker pull` ou l'installation de Docker. Dévoloppé par Diogo Monica et Nathan McCulney, experts sécurité récemment recrutés par Docker, le code est disponible sur [github](https://github.com/docker/notary).
 
 ### runC
 
 ![](RunC.png)
 
+Il s'agit peut-être de la plus grande nouvelle de cette conférence : le container runtime, tout le code Docker qui sert pour la géstion des conteneurs, sera livré comme un outil à part qui s'apellera runC.
+
+Le code est désormais disponible 
 https://github.com/opencontainers/runc
 https://runc.io
 TODO
@@ -90,8 +104,7 @@ Au moment de cette annonce, Alex Polvi, le CEO de CoreOS qui se trouvait au prem
 
 ![](Engine.png)
 
-Sans aucun doute Arnaud et Mike ont la démo plus cool de toute la conférence. 
-TODO
+Sans aucun doute la démo la plus cool de toute la conférence. 
 
 ### Luke Marsden (ClusterHQ), Alexis Richardson (Weaveworks), (Glitter Labs) - Docker plugins
 
@@ -100,7 +113,7 @@ TODO
 
 ```sh
 docker run --publish-service=service.network.weave
-	          --volume-driver=flocker
+              --volume-driver=flocker
 ````
 
 ## 2eme jour - Les nouveautés de la keynote
