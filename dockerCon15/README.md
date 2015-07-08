@@ -1,12 +1,12 @@
 # DockerCon 2015 - La grande messe de Docker
 
-![](banner1.png)
+![](banner-global.png)
 
 Les 22 et 23 juin derniers s'est déroulée à San Francisco la DockerCon. Nous étions invités en tant que gagnants du Docker Hackathon de décembre et nous n'avons pas été déçus : ambiance joviale, talks de qualité et grandes annonces ont rendu cet evenement exceptionnel.
 
 ## DockerCon Hackathon
 
-![](banner1.png)
+![](banner-hackathon.png)
 
 Comme le veut la tradition, le week-end qui précède la DockerCon se déroule un Hackathon : une compétition ouverte à tout développeur qui aurait envie de se lancer, en à peine 24h, dans le développement d'un nouveau projet autour de Docker. 
 
@@ -23,13 +23,13 @@ Quand à nous, eh bien nous avons participé encore une fois avec le projet [the
 
 En participant à un hackthon on peut etre sur d'une chose : un t-shirt nous sera offert. Et celui-ci était exceptionnel :
 
-![](banner1.png)
+![](banner-commitstrip.png)
 
 Il a été réalisés par les français de CommitStrip qui ont aussi participé à l'hackathon : la classe ! Chez Zenika nous sommes des grands de leur [strip](http://www.commitstrip.com/fr/) et chez Docker [ça doit être la même chose](https://www.youtube.com/watch?v=cRczhEvSH2A)
 
 ## Les nouveautés de la keynote : jour 1
 
-![](banner1.png)
+![](banner-keynote1.png)
 
 C'est Ben Golub, le CEO de Docker, le premier à monter sur scène. Après quelques remerciements il passe la parole au CTO Solomon Hykes qui commence par rappeler la mission de Docker :
 
@@ -91,7 +91,7 @@ Au moment où Salomon a fait l'annonce, Alex Polvi, le CEO de CoreOS qui se trou
 
 ## Les nouveautés de la keynote : jour 2
 
-![](banner1.png)
+![](banner-keynote2.png)
 
 C'est encore Ben Golub qui prend la parole au début de la matinée. Il rapelle les thèmes du premier jours (Open Standards, Plumbing, Developer Platform) et introduit le thème de cette deuxième journée : Business Solutions. Si la première journée était plus orientée développeurs, la deuxième est pour les clients et les partners. Est-ce que Docker est prêt pour la prod ? La réponse est oui et toutes les annonces de cette matinée sont visées à convaincre tous les clients qui auraient encore des doutes question.
 
@@ -131,7 +131,7 @@ Plus d'information sont disponibles à la page : https://docker.com/solutions
 
 ## Les talks
 
-![](banner1.png)
+![](banner-talks.png)
 
 A la fois le premier et le deuxième jours, après la keynote, ont eu lieu une série de talk qui traitaient de manière plus détailléee les sujets abordés à la keynote. C'ètait l'occasion de découvrir des REX et de assister à des démos parfois spéctaculaires. 
 
@@ -190,7 +190,7 @@ Beaucoup de nouveautés donc, certaines déjà disponibles et d'autres qui le se
 
 ## Rendez-vous à Barcelone
 
-![](banner1.png)
+![](banner-barcelona.png)
 
 Et nous voici arrivés à la fin de ce compte rendu. La conférence s'est terminéee avec Ben Golub qui a révelé lieu et date de la prochaine DockerCon : au CCIB de Barcelone le 16 et 17 Novembre prochains. Et nous ne pourrons pas manquer ;-)
 
