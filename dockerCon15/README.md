@@ -19,7 +19,7 @@ Comme le veut la tradition, le week-end qui précède la DockerCon se déroule u
 
 [Le projet](https://github.com/thedanfernandez/DockerCortanaClient) qui a remporté le premier prix est un client Docker vocal pour [Cortana](https://fr.wikipedia.org/wiki/Cortana_(Microsoft), le "Siri" de Microsoft, développé par [@HaishiBai2010](https://twitter.com/HaishiBai2010) et [@danielfe](https://twitter.com/danielfe).
 
-Quand à nous, et bien nous avons participé encore une fois avec le projet [the Phedds](https://github.com/mjbright/thephedds/): the Phenomenal Docker Demos. Une console web pour réaliser des démo Docker grandioses. Un shell contourné par 3 quadrants qui réprésentent de maniére graphique les conteneurs, les relations et le resources consommées. L'idée de ce projet est de [Mike](https://twitter.com/mjbright) et les autres membres de l'équipe sont [Ryan](https://twitter.com/iamnayr), [Kalyan](https://twitter.com/kalyathatikonda), [Zorigt](https://twitter.com/zorig) et Murali.
+Quand à nous, eh bien nous avons participé encore une fois avec le projet [the Phedds](https://github.com/mjbright/thephedds/): the Phenomenal Docker Demos. Une console web pour réaliser des démo Docker grandioses. Un shell contourné par 3 quadrants qui réprésentent de maniére graphique les conteneurs, les relations et le resources consommées. L'idée de ce projet est de [Mike](https://twitter.com/mjbright) et les autres membres de l'équipe sont [Ryan](https://twitter.com/iamnayr), [Kalyan](https://twitter.com/kalyathatikonda), [Zorigt](https://twitter.com/zorig) et Murali.
 
 En participant à un hackthon on peut etre sur d'une chose : un t-shirt nous sera offert. Et celui-ci était exceptionnel :
 
