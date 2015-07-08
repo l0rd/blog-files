@@ -10,7 +10,7 @@ Les 22 et 23 juin derniers s'est déroulée à San Francisco la DockerCon. Nous 
 
 Comme le veut la tradition, le week-end qui précède la DockerCon se déroule un Hackathon : une compétition ouverte à tout développeur qui aurait envie de se lancer, en à peine 24h, dans le développement d'un nouveau projet autour de Docker. 
 
-250 développeurs se sont présentés au rendez-vous et une quarantaine de projets ont été soumis. En voici quelques-uns que nous avons particulièrement appréciés :
+250 développeurs étaient au rendez-vous et une quarantaine de projets ont été soumis. En voici quelques-uns que nous avons particulièrement appréciés :
 
 * [Une application node.js qui implémente l'API Docker pour le build et run d'applications iOS](https://github.com/jkingyens/dockerthon) par [Jeff Kingyens](https://twitter.com/jkingyens)
 * [Un systeme de distribution massive de patch de sécurité pour des conteneurs distribués](https://github.com/advanderveer/libsecurity) par [Ad Van Der Veer](https://twitter.com/advanderveer), [Amir Jerbi](https://twitter.com/jerbia), [Peter Rossbach](https://twitter.com/PRossbach), [Meir Wahnon](https://twitter.com/meirwah), [Daniel Sachse](https://github.com/w0mbat) et [Greg Deed](https://github.com/tegbiz)
