@@ -1,12 +1,12 @@
 !!! DockerCon 2015 - La grande messe de Docker
 
-((/public/Billet_0xxx/banner-global.png|global|C))
+((/public/Billet_0579/banner-global.png|global|C))
 
 Les 22 et 23 juin derniers s'est déroulée à San Francisco la DockerCon. Nous étions invités en tant que gagnants du Docker Hackathon de décembre et nous n'avons pas été déçus : ambiance joviale, talks de qualité et grandes annonces ont rendu cet événement exceptionnel.
 
 !! DockerCon Hackathon
 
-((/public/Billet_0xxx/banner-hackathon.png|hackathon|C))
+((/public/Billet_0579/banner-hackathon.png|hackathon|C))
 
 Comme le veut la tradition, le week-end qui précède la DockerCon se déroule un Hackathon : une compétition ouverte à tout développeur qui aurait envie de se lancer, en à peine 24h, dans le développement d'un nouveau projet autour de Docker. 
 
@@ -23,17 +23,17 @@ Quand à nous, hé bien nous avons participé encore une fois avec le projet [th
 
 En participant à un Hackathon, on peut être sûr d'une chose : un t-shirt nous sera offert. Et celui-ci était exceptionnel :
 
-((/public/Billet_0xxx/banner-commitstrip.png|commitstrip|C))
+((/public/Billet_0579/banner-commitstrip.png|commitstrip|C))
 
 Il a été réalisé par les français de CommitStrip qui ont aussi participé au Hackathon : la classe ! Chez Zenika nous sommes des grands fans de leur [strip|http://www.commitstrip.com/fr/] et chez Docker [ce doit être la même chose|https://www.youtube.com/watch?v=cRczhEvSH2A].
 
 !! Les nouveautés de la keynote : jour 1
 
-((/public/Billet_0xxx/banner-keynote1.png|keynote1|C))
+((/public/Billet_0579/banner-keynote1.png|keynote1|C))
 
 C'est Ben Golub, le CEO de Docker, qui est le premier à monter sur scène. Après quelques remerciements il passe la parole au CTO Solomon Hykes qui commence par rappeler la mission de Docker :
 
-{{__Our mission is to build tools for mass innovation__}}
+{{Our mission is to build tools for mass innovation}}
 
 Le discours de Solomon est clair et convaincant. Le logiciel est le moyen le plus puissant aujourd'hui pour innover. Et Docker veut simplifier au maximum le développement et la publication de logiciels. Les quatre objectifs que Docker se donne pour les prochaines années en découlent : 
 
@@ -91,7 +91,7 @@ Au moment où Solomon a fait l'annonce, Alex Polvi, le CEO de CoreOS qui se trou
 
 !! Les nouveautés de la keynote : jour 2
 
-((/public/Billet_0xxx/banner-keynote2.png|keynote2|C))
+((/public/Billet_0579/banner-keynote2.png|keynote2|C))
 
 C'est encore Ben Golub qui prend la parole au début de la matinée. Il rappelle les thèmes du premier jour (Open Standards, Plumbing, Developer Platform) et introduit le thème de cette deuxième journée : Business Solutions. Si la première journée était plus orientée développeurs, la deuxième est pour les clients et les partners. Est-ce que Docker est prêt pour la prod ? La réponse est oui et toutes les annonces de cette matinée visent à convaincre tous les clients qui auraient encore des doutes.
 
@@ -131,9 +131,9 @@ Plus d'informations sont disponibles à la page : [https://docker.com/solutions|
 
 !! Les talks
 
-((/public/Billet_0xxx/banner-talks.png|talks|C))
+((/public/Billet_0579/banner-talks.png|talks|C))
 
-À la fois le premier et le deuxième jours, après la keynote, ont eu lieu une série de talks qui traitaient de manière plus détaillée les sujets abordés à la keynote. C'était l'occasion de découvrir des REX et d'assister à des démos parfois spectaculaires. 
+À la fois le premier et le deuxième jours, après la keynote, ont eu lieu une série de talks qui traitaient de manière plus détaillée les sujets abordés à la keynote. C'était l'occasion de découvrir des REX et de assister à des démos parfois spectaculaires. 
 
 Nous avons séléctionnés les 4 talks qui nous ont le plus impressionné :
  
@@ -156,7 +156,7 @@ Le mécanisme d'extension peut-être simplifié ainsi : les plugins s'enregistre
 
 Ci dessous un exemple d'utilisation des plugins weave (networking) et flocker (volumes)
 
-///[sh]
+///[bash]
 docker run --publish-service=service.network.weave
               --volume-driver=flocker
 
@@ -166,7 +166,7 @@ Tous ce qui a été présenté est déjà disponible pour être testé (sur le e
 
 ! Jessie Frazelle - Contain yourself
 
-Jessie est une développeuse brillante qui travaille pour la Core Team Docker. Elle est aussi très active sur [twitter|https://twitter.com/frazelledazzell] et à travers son [blog|https://blog.jessfraz.com/]. Ce talk est d'ailleurs inspiré d'un des ses blog posts : [Docker Containers on the Desktop|https://blog.jessfraz.com/post/docker-containers-on-the-desktop/] ou comment utiliser Docker de façon non conventionnelle. Jessica nous a montré comment elle a réussi a faire tourner tous les outils de son laptop dans des images Docker : client mail (mutt), IRC (Irssi), client twitter (Rainbowstream), browser (chrome), skype (avec appel en direct à Arnaud Porterie ;-)), Spotify etc. Elle a énuméré toutes les astuces pour accéder au serveur X11, à la carte son et au micro à partir d'un conteneur. Parmi toutes ces applications, la plus difficile à exécuter dans un conteneur a été Virtual Box : il a fallu récompiler le driver @@vboxdrv@@.
+Jessie est une développeuse brillante qui travaille pour la Core Team Docker. Elle est aussi très active sur [twitter|https://twitter.com/frazelledazzell] et à travers son [blog|https://blog.jessfraz.com/]. Ce talk est d'ailleurs inspiré d'un de ses blog posts : [Docker Containers on the Desktop|https://blog.jessfraz.com/post/docker-containers-on-the-desktop/] ou comment utiliser Docker de façon non conventionnelle. Jessica nous a montré comment elle a réussi a faire tourner tous les outils de son laptop dans des images Docker : client mail (mutt), IRC (Irssi), client twitter (Rainbowstream), browser (chrome), skype (avec appel en direct à Arnaud Porterie ;-)), Spotify etc. Elle a énuméré toutes les astuces pour accéder au serveur X11, à la carte son et au micro à partir d'un conteneur. Parmi toutes ces applications, la plus difficile à exécuter dans un conteneur a été Virtual Box : il a fallu récompiler le driver @@vboxdrv@@.
 
 Pour terminer Jessie nous a parlé du [projet Tor|https://www.torproject.org/], un ensemble d'outils pour l'anonymisation sur Internet, et de comment utiliser Docker pour rendre anonyme tout le flux TCP sortant de notre interface réseau. Les détails de cette démo sont également décrits dans un blog post : [How to Route Traffic through a Tor Docker container|https://blog.jessfraz.com/post/routing-traffic-through-tor-docker-container/].
 
@@ -190,7 +190,7 @@ Beaucoup de nouveautés donc, certaines déjà disponibles et d'autres qui le se
 
 !! Rendez-vous à Barcelone
 
-((/public/Billet_0xxx/banner-barcelona.png|barcelona|C))
+((/public/Billet_0579/banner-barcelona.png|barcelona|C))
 
 Et nous voici arrivés à la fin de ce compte rendu. La conférence s'est terminée avec Ben Golub qui a révélé le lieu et la date de la prochaine DockerCon : ça se fera au [CCIB|http://www.ccib.es/] de Barcelone le 16 et 17 Novembre prochains. Et nous ne pourrons pas la manquer ;-)
 
