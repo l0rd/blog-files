@@ -19,7 +19,7 @@ Comme le veut la tradition, le week-end qui précède la DockerCon se déroule u
 
 [Le projet|https://github.com/thedanfernandez/DockerCortanaClient] qui a remporté le premier prix est un client Docker vocal pour [Cortana|https://fr.wikipedia.org/wiki/Cortana_(Microsoft)], le "Siri" de Microsoft, développé par [@HaishiBai2010|https://twitter.com/HaishiBai2010] et [@danielfe|https://twitter.com/danielfe].
 
-Quand à nous, hé bien nous avons participé encore une fois avec le projet [the Phedds|https://github.com/mjbright/thephedds/]: the Phenomenal Docker Demos. Une console web pour réaliser des démos Docker grandioses. Un shell contourné par 3 quadrants représentent de manière graphique les conteneurs, les relations et le resources consommées. L'idée de ce projet est de [Mike|https://twitter.com/mjbright] et les autres membres de l'équipe sont [Ryan|https://twitter.com/iamnayr], [Kalyan|https://twitter.com/kalyathatikonda], [Zorigt|https://twitter.com/zorig] et Murali.
+Quand à nous, hé bien nous avons participé encore une fois avec le projet [the Phedds|https://github.com/mjbright/thephedds/]: the Phenomenal Docker Demos. Une console web pour réaliser des démos Docker grandioses. Un shell contourné par 3 quadrants qui représentent graphiquement les conteneurs, leurs relations et le resources consommées en temps réel. L'idée de ce projet est de [Mike|https://twitter.com/mjbright] et les autres membres de l'équipe sont [Ryan|https://twitter.com/iamnayr], [Kalyan|https://twitter.com/kalyathatikonda], [Zorigt|https://twitter.com/zorig] et Murali.
 
 En participant à un Hackathon, on peut être sûr d'une chose : un t-shirt nous sera offert. Et celui-ci était exceptionnel :
 
@@ -35,7 +35,7 @@ C'est Ben Golub, le CEO de Docker, qui est le premier à monter sur scène. Apr�
 
 {{__Our mission is to build tools for mass innovation__}}
 
-Le discours de Solomon est clair et convaincant. Le logiciel est le moyen plus puissant aujourd'hui pour innover. Et Docker veut simplifier au maximum le développement et la publication de logiciel. Les quatre objectifs que Docker se donne pour les prochaines années en découlent : 
+Le discours de Solomon est clair et convaincant. Le logiciel est le moyen le plus puissant aujourd'hui pour innover. Et Docker veut simplifier au maximum le développement et la publication de logiciels. Les quatre objectifs que Docker se donne pour les prochaines années en découlent : 
 
 1. Reinvent the developer toolbox
 2. Build better plumbings 
@@ -46,7 +46,7 @@ Les annonces qui suivent au cours de cette keynote adressent les trois premiers 
 
 ! Docker network et les nouvelles versions de Machine, Compose et Swarm
 
-Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté la plus importante de cette version est l'integration dans le ''engine'' du nouveau module réseau [libnetwork|https://github.com/docker/libnetwork]. Cela rend plus flexible la configuration réseau (grâce à un système de plugin que nous verrons plus tard) mais surtout le support de configurations multihost. C'est a dire qu'il sera possible d'établir des liens, (les ''links''), entre conteneurs sur des hosts distants. Cette dernière fonctionnalité n'est pas livrée avec la version 1.7 mais est disponible uniquement sur [le channel experimental |https://experimental.docker.com/].
+Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté la plus importante de cette version est l'integration dans le ''engine'' du nouveau module réseau [libnetwork|https://github.com/docker/libnetwork]. Cela rend plus flexible la configuration réseau (grâce à un système de plugin que nous verrons plus tard) mais surtout le support de configurations multi-host. C'est a dire qu'il sera possible d'établir des liens, (les ''links''), entre conteneurs sur des hosts distants. Cette dernière fonctionnalité n'est pas livrée avec la version 1.7 mais est disponible uniquement sur [le channel experimental |https://experimental.docker.com/].
 
 
 Machine, Compose et Swarm, les outils d'orchestration de Docker, [ont aussi été mis à jour pour la DockerCon|http://blog.docker.com/2015/06/compose-1-3-swarm-0-3-machine-0-3/]. Considérés jusqu'à aujourd'hui trop ~jeunes~ pour êtres utilisés en production, pour cette release il y a eu une stabilisation du code et pas de nouvelle features.
