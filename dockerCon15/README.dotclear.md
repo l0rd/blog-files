@@ -46,7 +46,7 @@ Les annonces qui suivent au cours de cette keynote adressent les trois premiers 
 
 ! Docker network et les nouvelles versions de Machine, Compose et Swarm
 
-Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté la plus importante de cette version est l'integration dans le ''engine'' du nouveau module réseau [libnetwork|https://github.com/docker/libnetwork]. Cela rend plus flexible la configuration réseau (grâce à un système de plugin que nous verrons plus tard) mais surtout le support de configurations multi-host. C'est a dire qu'il sera possible d'établir des liens, (les ''links''), entre conteneurs sur des hosts distants. Cette dernière fonctionnalité n'est pas livrée avec la version 1.7 mais est disponible uniquement sur [le channel experimental |https://experimental.docker.com/].
+Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté la plus importante de cette version est l'integration dans le ''engine'' du nouveau module réseau [libnetwork|https://github.com/docker/libnetwork]. Cela rend plus flexible la configuration réseau (grâce à un système de plugin que nous verrons plus tard) mais surtout le support de configurations ''multi-host''. C'est a dire qu'il sera possible d'établir des liens, (les ''links''), entre conteneurs sur des ''hosts'' distants. Cette dernière fonctionnalité n'est pas livrée avec la version 1.7 mais est disponible uniquement sur [le channel experimental |https://experimental.docker.com/].
 
 
 Machine, Compose et Swarm, les outils d'orchestration de Docker, [ont aussi été mis à jour pour la DockerCon|http://blog.docker.com/2015/06/compose-1-3-swarm-0-3-machine-0-3/]. Considérés jusqu'à aujourd'hui trop ~jeunes~ pour êtres utilisés en production, pour cette release il y a eu une stabilisation du code et pas de nouvelle features.
@@ -68,7 +68,7 @@ Il existe déjà des premiers exemples de plugins. [Flocker|http://clusterhq.com
 
 ! Docker plumbing project et notary
 
-Une grande partie du code de Docker (50%) sert à la gestion de l'infrastructure, ce qu'on appelle __infrastructure plumbing__. Il s'agit de tout ce qui n'est pas fonctionnel à la gestion des conteneurs. 
+Une grande partie du code de Docker (50%) sert à la gestion de l'infrastructure, ce que l'on appelle __infrastructure plumbing__. Il s'agit de tout ce qui n'est pas fonctionnel à la gestion des conteneurs. 
 
 Plus le projet grandit plus on sent le besoin de séparer la partie infrastructure de la partie conteneurs. Et Solomon a annoncé que Docker s'engage à effectuer cette séparation. Cela commence avec deux projets : runC, auquel est dédié le prochain paragraphe, et notary, un outil pour sécuriser les mises à jour. 
 
@@ -116,18 +116,18 @@ Il s'agit d'un registry Docker qui peut être déployé sur un serveur dans notr
 Le projet Orca développé par Evan Hazlett naît des cendres de [Shipyard|https://github.com/shipyard/shipyard]. C'est un outil dédié aux ops pour le monitoring et la gestion des conteneurs déployés en production. Parmi les différentes caractéristiques nous avons noté :
 
 * L'intégration avec des services pour l'authentication des users
-* Les détails des layer qui constituent une image
+* Les détails des layers qui constituent une image
 * L'intégration avec Swarm pour gérer tous les noeuds d'un même cluster
 
-Mais la feature la plus intéressante est la notion de stack de conteneurs. Orca permet de définir des groupes de conteneurs interconnectés comme on le fait pour docker-compose : à l'aide d'un fichier yml au même format.
+Mais la fonctionnalité la plus intéressante est la notion de stack de conteneurs. Orca permet de définir des groupes de conteneurs interconnectés comme on le fait pour docker-compose : à l'aide d'un fichier yml au même format.
 
 Le repository github du projet Orca n'est pas public (pour l'instant). Pour avoir plus d'informations on peut remplir [ce formulaire|https://docs.google.com/forms/d/18fTeWfbHelGoB0Npx8MAV_44M3euw9WZHFKIFZPkT2s/viewform]. 
 
 ! Docker commercial solutions
 
-Un service de TMA est une des demandes récurrentes des clients qui souhaitent déployer Docker en production. Pour répondre à cela Docker proposera à partir d'aujourd'hui un service d'experts disponibles pour répondre aux questions des utilisateurs ainsi que la maintenance du Docker Engine pendant un an à partir de la date de release et l'accès à des Docker registry privés.
+Un service de TMA est une des demandes récurrentes des clients qui souhaitent déployer Docker en production. Pour y répondre, Docker proposera à partir d'aujourd'hui un service d'experts disponibles pour répondre aux questions des utilisateurs ainsi que la maintenance du Docker Engine pendant un an à partir de la date de release et l'accès à des Docker registry privés.
 
-Plus d'informations sont disponibles à la page : https://docker.com/solutions
+Plus d'informations sont disponibles à la page : [https://docker.com/solutions|https://docker.com/solutions]
 
 !! Les talks
 
@@ -180,7 +180,7 @@ Il met tout de suite au clair que Microsoft est la société qui a le plus contr
 
 Mais Mark a surtout fait un certain nombre de démos qui montrent comment les produits Microsoft sont désormais intégrés avec Docker :
 
-* Le déploiement d'une application .NET dans un conteneur Docker distant (dans un host Ubuntu) en utilisant Visual Studio sur Windows.
+* Le déploiement d'une application .NET dans un conteneur Docker distant (dans un ''host'' Ubuntu) en utilisant Visual Studio sur Windows.
 * L'intégration de Compose et Swarm avec Visual Studio Online
 * Le provisioning d'une instance Azure du nouveau Docker Trusted Registry
 * La coloration syntaxique et l'autocomplétion des fichiers yml de docker-compose avec Visual Studio Code sur MacOS et le build, run d'un conteneur distant, cette fois-ci sur un serveur Windows 10.
