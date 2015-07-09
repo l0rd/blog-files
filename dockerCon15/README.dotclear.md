@@ -113,7 +113,7 @@ Il s'agit d'un registry Docker qui peut être déployé sur un serveur dans notr
 
 ! Project Orca
 
-Le projet Orca développée par Evan Hazlett nait des scendres de [Shipyard|https://github.com/shipyard/shipyard]. C'est un outil dédié aux ops pour le monitoring et la gestion des conteneurs déployés en production. Parmi les différentes caractéristiques nous avons noté :
+Le projet Orca développé par Evan Hazlett naît des scendres de [Shipyard|https://github.com/shipyard/shipyard]. C'est un outil dédié aux ops pour le monitoring et la gestion des conteneurs déployés en production. Parmi les différentes caractéristiques nous avons noté :
 
 * L'intégration avec des services pour l'authentication des users
 * Les détails des layer qui constituent une image
