@@ -25,7 +25,7 @@ En participant à un hackathon on peut être sur d'une chose : un t-shirt nous s
 
 ((/public/Billet_0xxx/banner-commitstrip.png|commitstrip|C))
 
-Il a été réalisés par les français de CommitStrip qui ont aussi participé à l'hackathon : la classe ! Chez Zenika nous sommes des grands fans de leur [strip|http://www.commitstrip.com/fr/] et chez Docker [ça doit être la même chose|https://www.youtube.com/watch?v=cRczhEvSH2A]
+Il a été réalisé par les français de CommitStrip qui ont aussi participé à l'hackathon : la classe ! Chez Zenika nous sommes des grands fans de leur [strip|http://www.commitstrip.com/fr/] et chez Docker [ça doit être la même chose|https://www.youtube.com/watch?v=cRczhEvSH2A].
 
 !! Les nouveautés de la keynote : jour 1
 
@@ -46,12 +46,12 @@ Les annonces qui suivent au cours de cette keynote adressent les trois premiers 
 
 ! Docker network et les nouvelles versions de machine, compose et swarm
 
-Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté la plus importante de cette version est l'integration dans le engine du nouveau module réseau [libnetwork|https://github.com/docker/libnetwork]. Cela rend plus flexible la configuration réseau (grâce à un système de plugin que nous verrons plus tard) mais surtout le support de configurations multihost. C'est a dire qu'il sera possible d'établir des liens, (les ''links''), entre conteneurs sur des hosts distants. Cette dernière fonctionnalité n'est pas livrée avec la version 1.7 mais est disponible uniquement sur [le channel experimental |https://experimental.docker.com/].
+Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté la plus importante de cette version est l'integration dans le ''engine'' du nouveau module réseau [libnetwork|https://github.com/docker/libnetwork]. Cela rend plus flexible la configuration réseau (grâce à un système de plugin que nous verrons plus tard) mais surtout le support de configurations multihost. C'est a dire qu'il sera possible d'établir des liens, (les ''links''), entre conteneurs sur des hosts distants. Cette dernière fonctionnalité n'est pas livrée avec la version 1.7 mais est disponible uniquement sur [le channel experimental |https://experimental.docker.com/].
 
 
-Machine, compose et swarm, les outils de orchestration de Docker, [ont aussi été mis à jour pour la DockerCon|http://blog.docker.com/2015/06/compose-1-3-swarm-0-3-machine-0-3/]. Considérés jusqu'à aujourd'hui trop ~jeunes~ pour êtres utilisés en production, pour cette release il y a eu une stabilisation du code et pas de nouvelle features.
+Machine, compose et swarm, les outils d'orchestration de Docker, [ont aussi été mis à jour pour la DockerCon|http://blog.docker.com/2015/06/compose-1-3-swarm-0-3-machine-0-3/]. Considérés jusqu'à aujourd'hui trop ~jeunes~ pour êtres utilisés en production, pour cette release il y a eu une stabilisation du code et pas de nouvelle features.
 
-La seules nouveauté majeure concerne swarm : l'integration avec Mesos (i.e. la possibilité de deployer les conteneurs dans un cluster Mesos en passant par swarm) et l'exploitation du nouveau module de networking de l'engine Docker (i.e. la possibilité de faire communiquer des conteneurs qui se trouvent sur des noeuds différents).
+Les seules nouveautés majeures concernent swarm : l'integration avec Mesos (i.e. la possibilité de deployer les conteneurs dans un cluster Mesos en passant par swarm) et l'exploitation du nouveau module de networking du Docker Engine (i.e. la possibilité de faire communiquer des conteneurs qui se trouvent sur des noeuds différents).
 
 ! Docker plugins
 
@@ -59,8 +59,8 @@ Et on arrive à une des annonces les plus attendues : les plugins pour Docker. A
 
 Pour l'instant deux types de plugins ont été présentés :
 
-* ''Network plugins'': extensions pour connecter des conteneurs qui sont sur des machines ou des réseaux distants
-* ''Volume plugins'': extensions pour persister les volumes des conteneurs
+* ''Network plugins'': extensions pour connecter des conteneurs qui peuvent être sur des machines ou des réseaux distants
+* ''Volume plugins'': extensions pour la persistance des volumes des conteneurs
 
 Les autres typologies de plugin disponibles sont scheduler et service discovery. D'autres seront bientôt livrées.
 
@@ -76,9 +76,9 @@ Plus le projet grandit plus on sent le besoin de séparer la partie infrastructu
 
 ! runC
 
-Mais la première étape du Docker plumbing project consiste à isoler le code pour la gestion des conteneurs : le "container runtime". Et c'est ce que l'équipe a fait avec runC, peut-être la nouveauté la plus importante de cette conférence : le code qui constitue le noyau de Docker, libcontainer, est déplacé dans ce nouveau projet qui ne fait pas partie de l'organisation Docker mais du Open Container Project (OCP). Docker a fait donation de son "container runtime" à la OCP, organisation vendor-neutral, que nous présentons quelques lignes plus bas.  
+Mais la première étape du Docker plumbing project consiste à isoler le code pour la gestion des conteneurs : le "container runtime". Et c'est ce que l'équipe a fait avec runC, peut-être la nouveauté la plus importante de cette conférence : le code qui constitue le noyau de Docker, libcontainer, est déplacé dans ce nouveau projet qui ne fait pas partie de l'organisation Docker mais du Open Container Project (OCP). Docker a fait donation de son "container runtime" à la OCP, organisation ''vendor-neutral'', que nous présentons quelques lignes plus bas.  
 
-Runc est actuellement en phase de développement mais un support multiplateforme (Linux et Windows 10) et multi architecture (x86, Arm, Power, Sparc) est annoncé. Pour plus d'info [une page|http://runc.io/] y est dédiée au projet et le code est disponible sur [github|https://github.com/opencontainers/runc].
+Runc est actuellement en phase de développement mais un support multiplateforme (Linux et Windows 10) et multi architecture (x86, Arm, Power, Sparc) est annoncé. Pour plus d'informations [une page|http://runc.io/] y est dédiée au projet et le code est disponible sur [github|https://github.com/opencontainers/runc].
 
 ! Open Container Format et Open Container Project
 
@@ -93,13 +93,13 @@ Au moment où Salomon a fait l'annonce, Alex Polvi, le CEO de CoreOS qui se trou
 
 ((/public/Billet_0xxx/banner-keynote2.png|keynote2|C))
 
-C'est encore Ben Golub qui prend la parole au début de la matinée. Il rappelle les thèmes du premier jour (Open Standards, Plumbing, Developer Platform) et introduit le thème de cette deuxième journée : Business Solutions. Si la première journée était plus orientée développeurs, la deuxième est pour les clients et les partners. Est-ce que Docker est prêt pour la prod ? La réponse est oui et toutes les annonces de cette matinée sont visées à convaincre tous les clients qui auraient encore des doutes question.
+C'est encore Ben Golub qui prend la parole au début de la matinée. Il rappelle les thèmes du premier jour (Open Standards, Plumbing, Developer Platform) et introduit le thème de cette deuxième journée : Business Solutions. Si la première journée était plus orientée développeurs, la deuxième est pour les clients et les partners. Est-ce que Docker est prêt pour la prod ? La réponse est oui et toutes les annonces de cette matinée visent à convaincre tous les clients qui auraient encore des doutes question.
 
 ! Une nouvelle version du Docker Hub
 
-Le Docker Hub a été lancé il y a à peine un an et compte déjà 240K utilisateurs. A servi plus de 500M pull d'images Docker. Il est devenu un repository pour images privés mais surtout d'images officielles. 
+Le Docker Hub a été lancé il y a à peine un an et compte déjà 240K utilisateurs. Il a servi plus de 500M pull d'images Docker. Il est devenu un repository pour images privés mais surtout d'images officielles. 
 
-Mais le Docker Hub est aussi utilisé comme outil pour l'intégration continue : on peut builder une application (en utilisant l'instruction RUN dans un container) ou la déployer (avec le système de hook du Hub).
+Mais le Docker Hub est aussi utilisé comme outil pour l'intégration continue : on peut builder une application (en utilisant les ''automated builds'' qui créer une image à partir d'un @@Dockerfile@@) ou la déployer (avec le système de hook du Hub).
 
 Bref l'architecture et la capacité prévue pour le Hub il y a un an ne sont plus suffisantes et un refactoring de la stack technique a été obligatoire. 
 
@@ -121,11 +121,11 @@ Le projet Orca développé par Evan Hazlett naît des scendres de [Shipyard|http
 
 Mais la feature plus intéressante est la notion de stack de conteneurs. Orca permet de définir des groupes de conteneurs interconnectés comme on le fait pour docker-compose : à l'aide d'un fichier yml. Même format réutilisable donc.
 
-Le repository github du projet Orca n'est pas public (pour l'instant). Pour avoir plus d'info on peut remplir [ce formulaire|https://docs.google.com/forms/d/18fTeWfbHelGoB0Npx8MAV_44M3euw9WZHFKIFZPkT2s/viewform]. 
+Le repository github du projet Orca n'est pas public (pour l'instant). Pour avoir plus d'informations on peut remplir [ce formulaire|https://docs.google.com/forms/d/18fTeWfbHelGoB0Npx8MAV_44M3euw9WZHFKIFZPkT2s/viewform]. 
 
 ! Docker commercial solutions
 
-Un service de TMA est une des demandes récurrents des clients qui souhaitent déployer Docker en production. Pour répondre Docker proposera à partir d'aujourd'hui un service d'experts disponibles pour répondre aux questions des utilisateurs ainsi que la maintenance du Docker engine pendant un an à partir de la date de release et l'accès à des Docker registry privés.
+Un service de TMA est une des demandes récurrents des clients qui souhaitent déployer Docker en production. Pour répondre Docker proposera à partir d'aujourd'hui un service d'experts disponibles pour répondre aux questions des utilisateurs ainsi que la maintenance du Docker Engine pendant un an à partir de la date de release et l'accès à des Docker registry privés.
 
 Plus d'information sont disponibles à la page : https://docker.com/solutions
 
@@ -142,9 +142,9 @@ Nous avons séléctionnés les 4 talks qui nous ont le plus impressionné ci-des
 
 Sans aucun doute la démo la plus cool de toute la conférence ! Le tour du monde d'un serveur Quake (dans un conteneur) à coups de [checkpoint/restore|http://criu.org/Docker] avec [runC|http://runc.io/] sans jamais arrêter de jouer.
 
-Pour plus d'info sur les détails techniques de cette démo Saied Kazemi, un ingénieur de Google, a écrit [un article très intéressant|http://blog.kubernetes.io/2015/07/how-did-quake-demo-from-dockercon-work.html].
+Pour plus d'informations sur les détails techniques de cette démo Saied Kazemi, un ingénieur de Google, a écrit [un article très intéressant|http://blog.kubernetes.io/2015/07/how-did-quake-demo-from-dockercon-work.html].
 
-En plus de la démo, Mike et Arnaud ont parlé du futur du Docker Engine et de runC, sujets déjà introduits par Solomon lors de la keynote, détaillés un peu plus dans ce cas. 
+En plus de la démo, Mike et Arnaud ont parlé du futur du Docker Engine et de runC, sujets déjà introduits par Solomon lors de la keynote, un peu plus détaillés dans ce cas. 
 
 En tout cas [check out the video|https://www.youtube.com/watch?v=mL9AFkJJAq0&app=desktop], ça vaut le coup!
 
@@ -152,7 +152,7 @@ En tout cas [check out the video|https://www.youtube.com/watch?v=mL9AFkJJAq0&app
 
 Les extensions viennent d'être annoncées à la keynote et ce talk en montre deux implémentations : le volume plugin développé par ClusterHQ (Flocker) et le networking plugin développé par Weaveworks. Le tout expliqué à l'aide d'[une démo vraiment bien faite|https://www.youtube.com/watch?v=ri5mzIsbsY8]. 
 
-Le mécanisme d'extension peut-être simplifié ainsi : les plugins s'enregistrent auprès de l'engine Docker pour être notifiés a l'occasion de certains événements. A chaque notification est associé un hook bloquant. La communication entre les plugins et le engine se fait avec une api REST.
+Le mécanisme d'extension peut-être simplifié ainsi : les plugins s'enregistrent auprès du Docker Engine pour être notifiés a l'occasion de certains événements. A chaque notification est associé un hook bloquant. La communication entre les plugins et le ''engine'' se fait avec une api REST.
 
 Ci dessous un exemple d'utilisation des plugins weave (networking) et flocker (volumes)
 
@@ -166,7 +166,7 @@ Tous ce qui a été présenté est déjà disponible pour être testé (sur le e
 
 ! Jessie Frazelle - Contain yourself
 
-Jessie est une développeuse brillante qui travaille pour la Core Team Docker. Elle est aussi très active sur [twitter|https://twitter.com/frazelledazzell] et à travers son [blog|https://blog.jessfraz.com/]. Et c'est sur la base d'un de ses blog posts que s'inspire ce talk : [Docker Containers on the Desktop|https://blog.jessfraz.com/post/docker-containers-on-the-desktop/] ou comment utiliser Docker de façon non conventionnelle. Jessica nous a montré comment elle a réussi a faire tourner tous les outils de son laptop dans des images Docker : client mail (mutt), IRC (Irssi), client twitter (Rainbowstream), browser (chrome), skype (avec appel en direct à Arnaud Porterie ;-)), Spotify etc. Elle a énuméré toutes les astuces pour accéder au serveur X11, à la carte son et au micro à partir d'un conteneur. Parmi toutes ces applications, la plus difficile à exécuter dans un conteneur a été Virtual Box : il a fallu utiliser récompiler le driver @@/etc/init.d/vboxdrv@@.
+Jessie est une développeuse brillante qui travaille pour la Core Team Docker. Elle est aussi très active sur [twitter|https://twitter.com/frazelledazzell] et à travers son [blog|https://blog.jessfraz.com/]. Et c'est sur la base d'un de ses blog posts que s'inspire ce talk : [Docker Containers on the Desktop|https://blog.jessfraz.com/post/docker-containers-on-the-desktop/] ou comment utiliser Docker de façon non conventionnelle. Jessica nous a montré comment elle a réussi a faire tourner tous les outils de son laptop dans des images Docker : client mail (mutt), IRC (Irssi), client twitter (Rainbowstream), browser (chrome), skype (avec appel en direct à Arnaud Porterie ;-)), Spotify etc. Elle a énuméré toutes les astuces pour accéder au serveur X11, à la carte son et au micro à partir d'un conteneur. Parmi toutes ces applications, la plus difficile à exécuter dans un conteneur a été Virtual Box : il a fallu utiliser récompiler le driver @@vboxdrv@@.
 
 Pour terminer Jessie nous a parlé du [projet Tor|https://www.torproject.org/], un ensemble de outils pour l'anonymisation sur Internet, et de comment utiliser Docker pour rendre anonyme tout le flux TCP sortant de notre interface réseau. Les détails de cette démo sont également décrits dans un blog posts : [How to Route Traffic through a Tor Docker container|https://blog.jessfraz.com/post/routing-traffic-through-tor-docker-container/].
 
@@ -176,7 +176,7 @@ Bref ce talk était encore une fois très intéressant et [la video est déjà d
 
 La collaboration entre Microsoft et Docker est de plus en plus étroite et Mark Russinovich, le CTO de Microsoft Azure, était là pour en témoigner.
 
-Il met tout de suite au clair que Microsoft est la société qui a le plus contribué au code de Docker entre mars et juin 2015. Cela s'explique par les pull request importantes qui ont été faites par des développeurs du groupe de Redmond : le client natif pour Windows et le support de Windows 10 pour le Docker engine.
+Il met tout de suite au clair que Microsoft est la société qui a le plus contribué au code de Docker entre mars et juin 2015. Cela s'explique par les pull request importantes qui ont été faites par des développeurs du groupe de Redmond : le client natif pour Windows et le support de Windows 10 pour le Docker Engine.
 
 Mais Mark a surtout fait un certain nombre de démo qui montrent comment les produits Microsoft sont désormais intégrés avec Docker :
 
