@@ -192,7 +192,7 @@ Beaucoup de nouveautés donc, certaines déjà disponibles et d'autres qui le se
 
 ![](banner-barcelona.png)
 
-Et nous voici arrivés à la fin de ce compte rendu. La conférence s'est terminée avec Ben Golub qui a révelé lieu et date de la prochaine DockerCon : au CCIB de Barcelone le 16 et 17 Novembre prochains. Et nous ne pourrons pas manquer ;-)
+Et nous voici arrivés à la fin de ce compte rendu. La conférence s'est terminée avec Ben Golub qui a révelé lieu et date de la prochaine DockerCon : ça se fera au [CCIB](http://www.ccib.es/) de Barcelone le 16 et 17 Novembre prochains. Et nous ne pourrons pas manquer ;-)
 
 
 
