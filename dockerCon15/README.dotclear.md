@@ -19,13 +19,13 @@ Comme le veut la tradition, le week-end qui précède la DockerCon se déroule u
 
 [Le projet|https://github.com/thedanfernandez/DockerCortanaClient] qui a remporté le premier prix est un client Docker vocal pour [Cortana|https://fr.wikipedia.org/wiki/Cortana_(Microsoft)], le "Siri" de Microsoft, développé par [@HaishiBai2010|https://twitter.com/HaishiBai2010] et [@danielfe|https://twitter.com/danielfe].
 
-Quand à nous, hé bien nous avons participé encore une fois avec le projet [the Phedds|https://github.com/mjbright/thephedds/]: the Phenomenal Docker Demos. Une console web pour réaliser des démo Docker grandioses. Un shell contourné par 3 quadrants représentent de manière graphique les conteneurs, les relations et le resources consommées. L'idée de ce projet est de [Mike|https://twitter.com/mjbright] et les autres membres de l'équipe sont [Ryan|https://twitter.com/iamnayr], [Kalyan|https://twitter.com/kalyathatikonda], [Zorigt|https://twitter.com/zorig] et Murali.
+Quand à nous, hé bien nous avons participé encore une fois avec le projet [the Phedds|https://github.com/mjbright/thephedds/]: the Phenomenal Docker Demos. Une console web pour réaliser des démos Docker grandioses. Un shell contourné par 3 quadrants représentent de manière graphique les conteneurs, les relations et le resources consommées. L'idée de ce projet est de [Mike|https://twitter.com/mjbright] et les autres membres de l'équipe sont [Ryan|https://twitter.com/iamnayr], [Kalyan|https://twitter.com/kalyathatikonda], [Zorigt|https://twitter.com/zorig] et Murali.
 
-En participant à un hackathon on peut être sur d'une chose : un t-shirt nous sera offert. Et celui-ci était exceptionnel :
+En participant à un hackathon, on peut être sûr d'une chose : un t-shirt nous sera offert. Et celui-ci était exceptionnel :
 
 ((/public/Billet_0xxx/banner-commitstrip.png|commitstrip|C))
 
-Il a été réalisé par les français de CommitStrip qui ont aussi participé à l'hackathon : la classe ! Chez Zenika nous sommes des grands fans de leur [strip|http://www.commitstrip.com/fr/] et chez Docker [ça doit être la même chose|https://www.youtube.com/watch?v=cRczhEvSH2A].
+Il a été réalisé par les français de CommitStrip qui ont aussi participé au hackathon : la classe ! Chez Zenika nous sommes des grands fans de leur [strip|http://www.commitstrip.com/fr/] et chez Docker [ce doit être la même chose|https://www.youtube.com/watch?v=cRczhEvSH2A].
 
 !! Les nouveautés de la keynote : jour 1
 
@@ -33,9 +33,9 @@ Il a été réalisé par les français de CommitStrip qui ont aussi participé �
 
 C'est Ben Golub, le CEO de Docker, qui est le premier à monter sur scène. Après quelques remerciements il passe la parole au CTO Solomon Hykes qui commence par rappeler la mission de Docker :
 
-__Our mission is to build tools for mass innovation__
+{{__Our mission is to build tools for mass innovation__}}
 
-Le discours de Solomon est clair et convaincant. Le logiciel est le moyen plus puissant aujourd'hui pour innover. Et Docker veut simplifier au maximum le développement et la publication de logiciel. Les quatre objectifs que Docker se donne pour les prochaines années en découlent: 
+Le discours de Solomon est clair et convaincant. Le logiciel est le moyen plus puissant aujourd'hui pour innover. Et Docker veut simplifier au maximum le développement et la publication de logiciel. Les quatre objectifs que Docker se donne pour les prochaines années en découlent : 
 
 1. Reinvent the developer toolbox
 2. Build better plumbings 
@@ -51,7 +51,7 @@ Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Do
 
 Machine, compose et swarm, les outils d'orchestration de Docker, [ont aussi été mis à jour pour la DockerCon|http://blog.docker.com/2015/06/compose-1-3-swarm-0-3-machine-0-3/]. Considérés jusqu'à aujourd'hui trop ~jeunes~ pour êtres utilisés en production, pour cette release il y a eu une stabilisation du code et pas de nouvelle features.
 
-Les seules nouveautés majeures concernent swarm : l'integration avec Mesos (i.e. la possibilité de deployer les conteneurs dans un cluster Mesos en passant par swarm) et l'exploitation du nouveau module de networking du Docker Engine (i.e. la possibilité de faire communiquer des conteneurs qui se trouvent sur des noeuds différents).
+Les seules nouveautés majeures concernent swarm : l'integration avec Mesos (i.e. la possibilité de déployer les conteneurs dans un cluster Mesos en passant par swarm) et l'exploitation du nouveau module de networking du Docker Engine (i.e. la possibilité de faire communiquer des conteneurs qui se trouvent sur des noeuds différents).
 
 ! Docker plugins
 
@@ -62,7 +62,7 @@ Pour l'instant deux types de plugins ont été présentés :
 * ''Network plugins'': extensions pour connecter des conteneurs qui peuvent être sur des machines ou des réseaux distants
 * ''Volume plugins'': extensions pour la persistance des volumes des conteneurs
 
-Les autres typologies de plugin disponibles sont scheduler et service discovery. D'autres seront bientôt livrées.
+Les autres typologies de plugins disponibles sont scheduler et service discovery. D'autres seront bientôt livrées.
 
 Il existe déjà des premiers exemples de plugins. [Flocker|http://clusterhq.com/docker-plugin] pour les volumes et [Weave|http://blog.weave.works/2015/06/22/weave-as-a-docker-network-plugin/], [Project Calico|http://www.projectcalico.org/calico-docker-1-7-libnetwork/], [Nuage Networks|http://www.nuagenetworks.net/libnetwork-is-license-to-hyper-scale-for-docker-and-sdn/], [Cisco|http://blogs.cisco.com/datacenter/docker-and-the-rise-of-microservices], [VMware|http://blogs.vmware.com/networkvirtualization/2015/06/vmware-docker-networking.html], Microsoft et [Midokura|http://blog.midonet.org/docker-networking-midonet/] pour le networking.
 
@@ -70,7 +70,7 @@ Il existe déjà des premiers exemples de plugins. [Flocker|http://clusterhq.com
 
 Une grande partie du code de Docker (50%) sert à la gestion de l'infrastructure, ce qu'on appelle __infrastructure plumbing__. Il s'agit de tout ce qui n'est pas fonctionnel à la gestion des conteneurs. 
 
-Plus le projet grandit plus on sent le besoin de séparer la partie infrastructure de la partie conteneurs. Et Solomon a annoncé que Docker s'engage à effectuer cette séparation. Cela commence avec deux projets : runC, auquel est dédié le prochain paragraphe, et notary, un outils pour sécuriser les mises à jour. 
+Plus le projet grandit plus on sent le besoin de séparer la partie infrastructure de la partie conteneurs. Et Solomon a annoncé que Docker s'engage à effectuer cette séparation. Cela commence avec deux projets : runC, auquel est dédié le prochain paragraphe, et notary, un outil pour sécuriser les mises à jour. 
 
 [Notary|https://github.com/docker/notary] se base sur [The Update Framework|http://theupdateframework.com/] pour vérifier l'intégrité et la source des artefacts téléchargés sur Internet. Dans l'esprit du plumbing project, cet outil est séparé de Docker et du Hub et pourrait être réutilisé par d'autres projets. Son utilité ? La vérification des images téléchargées avec un @@docker pull@@ ou du package d'installation de Docker. Notary a été développé par Diogo Monica et Nathan McCulney, les deux experts sécurité récemment recrutés par Docker et le code est disponible sur [github|https://github.com/docker/notary].
 
@@ -86,18 +86,18 @@ L'année dernière, quelques jours avant la DockerCon Européenne, CoreOS avait 
 
 La réponse de Docker arrive aujourd'hui avec l'annonce du [Open Container Project|https://www.opencontainers.org/], une coalition de sociétés (entre autres Amazon, CoreOS, Docker, Google, IBM, Mesosphere, Microsoft, Rancher Labs, Red Hat, VMware) unies pour définir un standard pour le format des containers. Ce projet sera maintenu par la Linux Foundation. La rédaction de [la spécification Open Container Format|https://github.com/opencontainers/specs] est encore en cours. Le premier draft sera publié à la fin du mois de juillet.
 
-Au moment où Salomon a fait l'annonce, Alex Polvi, le CEO de CoreOS qui se trouvait au premier rang, s'est levé pour serrer la main à Solomon : la guerre du standard des conteneurs est terminée !
+Au moment où Solomon a fait l'annonce, Alex Polvi, le CEO de CoreOS qui se trouvait au premier rang, s'est levé pour serrer la main à Solomon : la guerre du standard des conteneurs est terminée !
 
 
 !! Les nouveautés de la keynote : jour 2
 
 ((/public/Billet_0xxx/banner-keynote2.png|keynote2|C))
 
-C'est encore Ben Golub qui prend la parole au début de la matinée. Il rappelle les thèmes du premier jour (Open Standards, Plumbing, Developer Platform) et introduit le thème de cette deuxième journée : Business Solutions. Si la première journée était plus orientée développeurs, la deuxième est pour les clients et les partners. Est-ce que Docker est prêt pour la prod ? La réponse est oui et toutes les annonces de cette matinée visent à convaincre tous les clients qui auraient encore des doutes question.
+C'est encore Ben Golub qui prend la parole au début de la matinée. Il rappelle les thèmes du premier jour (Open Standards, Plumbing, Developer Platform) et introduit le thème de cette deuxième journée : Business Solutions. Si la première journée était plus orientée développeurs, la deuxième est pour les clients et les partners. Est-ce que Docker est prêt pour la prod ? La réponse est oui et toutes les annonces de cette matinée visent à convaincre tous les clients qui auraient encore des doutes sur la question.
 
 ! Une nouvelle version du Docker Hub
 
-Le Docker Hub a été lancé il y a à peine un an et compte déjà 240K utilisateurs. Il a servi plus de 500M pull d'images Docker. Il est devenu un repository pour images privés mais surtout d'images officielles. 
+Le Docker Hub a été lancé il y a à peine un an et compte déjà 240K utilisateurs. Il a servi plus de 500M pull d'images Docker. Il est devenu un repository pour images privées mais surtout d'images officielles. 
 
 Mais le Docker Hub est aussi utilisé comme outil pour l'intégration continue : on peut builder une application (en utilisant les ''automated builds'' qui créer une image à partir d'un @@Dockerfile@@) ou la déployer (avec le système de hook du Hub).
 
@@ -119,13 +119,13 @@ Le projet Orca développé par Evan Hazlett naît des scendres de [Shipyard|http
 * Les détails des layer qui constituent une image
 * L'intégration avec swarm pour gérer tous les noeuds d'un meme cluster
 
-Mais la feature plus intéressante est la notion de stack de conteneurs. Orca permet de définir des groupes de conteneurs interconnectés comme on le fait pour docker-compose : à l'aide d'un fichier yml. Même format réutilisable donc.
+Mais la feature plus intéressante est la notion de stack de conteneurs. Orca permet de définir des groupes de conteneurs interconnectés comme on le fait pour docker-compose : à l'aide d'un fichier yml au même format.
 
 Le repository github du projet Orca n'est pas public (pour l'instant). Pour avoir plus d'informations on peut remplir [ce formulaire|https://docs.google.com/forms/d/18fTeWfbHelGoB0Npx8MAV_44M3euw9WZHFKIFZPkT2s/viewform]. 
 
 ! Docker commercial solutions
 
-Un service de TMA est une des demandes récurrents des clients qui souhaitent déployer Docker en production. Pour répondre Docker proposera à partir d'aujourd'hui un service d'experts disponibles pour répondre aux questions des utilisateurs ainsi que la maintenance du Docker Engine pendant un an à partir de la date de release et l'accès à des Docker registry privés.
+Un service de TMA est une des demandes récurrentes des clients qui souhaitent déployer Docker en production. Pour répondre à cela Docker proposera à partir d'aujourd'hui un service d'experts disponibles pour répondre aux questions des utilisateurs ainsi que la maintenance du Docker Engine pendant un an à partir de la date de release et l'accès à des Docker registry privés.
 
 Plus d'information sont disponibles à la page : https://docker.com/solutions
 
@@ -133,9 +133,9 @@ Plus d'information sont disponibles à la page : https://docker.com/solutions
 
 ((/public/Billet_0xxx/banner-talks.png|talks|C))
 
-A la fois le premier et le deuxième jours, après la keynote, ont eu lieu une série de talk qui traitaient de manière plus détaillée les sujets abordés à la keynote. C'était l'occasion de découvrir des REX et d'assister à des démos parfois spectaculaires. 
+À la fois le premier et le deuxième jours, après la keynote, ont eu lieu une série de talks qui traitaient de manière plus détaillée les sujets abordés à la keynote. C'était l'occasion de découvrir des REX et d'assister à des démos parfois spectaculaires. 
 
-Nous avons séléctionnés les 4 talks qui nous ont le plus impressionné ci-dessous :
+Nous avons séléctionnés les 4 talks qui nous ont le plus impressionnés ci-dessous :
  
 
 ! Arnaud Porterie et Mike Cosby - Docker Engine
@@ -146,13 +146,13 @@ Pour plus d'informations sur les détails techniques de cette démo Saied Kazemi
 
 En plus de la démo, Mike et Arnaud ont parlé du futur du Docker Engine et de runC, sujets déjà introduits par Solomon lors de la keynote, un peu plus détaillés dans ce cas. 
 
-En tout cas [check out the video|https://www.youtube.com/watch?v=mL9AFkJJAq0&app=desktop], ça vaut le coup!
+En tout cas [check out the video|https://www.youtube.com/watch?v=mL9AFkJJAq0&app=desktop], ça vaut le coup !
 
 ! Luke Marsden (ClusterHQ), Alexis Richardson (Weaveworks), Jeff Lindsay (Glitter Labs) - Docker plugins
 
 Les extensions viennent d'être annoncées à la keynote et ce talk en montre deux implémentations : le volume plugin développé par ClusterHQ (Flocker) et le networking plugin développé par Weaveworks. Le tout expliqué à l'aide d'[une démo vraiment bien faite|https://www.youtube.com/watch?v=ri5mzIsbsY8]. 
 
-Le mécanisme d'extension peut-être simplifié ainsi : les plugins s'enregistrent auprès du Docker Engine pour être notifiés a l'occasion de certains événements. A chaque notification est associé un hook bloquant. La communication entre les plugins et le ''engine'' se fait avec une api REST.
+Le mécanisme d'extension peut-être simplifié ainsi : les plugins s'enregistrent auprès du Docker Engine pour être notifiés a l'occasion de certains événements. À chaque notification est associé un hook bloquant. La communication entre les plugins et le ''engine'' se fait avec une API REST.
 
 Ci dessous un exemple d'utilisation des plugins weave (networking) et flocker (volumes)
 
@@ -166,9 +166,9 @@ Tous ce qui a été présenté est déjà disponible pour être testé (sur le e
 
 ! Jessie Frazelle - Contain yourself
 
-Jessie est une développeuse brillante qui travaille pour la Core Team Docker. Elle est aussi très active sur [twitter|https://twitter.com/frazelledazzell] et à travers son [blog|https://blog.jessfraz.com/]. Et c'est sur la base d'un de ses blog posts que s'inspire ce talk : [Docker Containers on the Desktop|https://blog.jessfraz.com/post/docker-containers-on-the-desktop/] ou comment utiliser Docker de façon non conventionnelle. Jessica nous a montré comment elle a réussi a faire tourner tous les outils de son laptop dans des images Docker : client mail (mutt), IRC (Irssi), client twitter (Rainbowstream), browser (chrome), skype (avec appel en direct à Arnaud Porterie ;-)), Spotify etc. Elle a énuméré toutes les astuces pour accéder au serveur X11, à la carte son et au micro à partir d'un conteneur. Parmi toutes ces applications, la plus difficile à exécuter dans un conteneur a été Virtual Box : il a fallu utiliser récompiler le driver @@vboxdrv@@.
+Jessie est une développeuse brillante qui travaille pour la Core Team Docker. Elle est aussi très active sur [twitter|https://twitter.com/frazelledazzell] et à travers son [blog|https://blog.jessfraz.com/]. Et c'est sur la base d'un de ses blog posts que s'inspire ce talk : [Docker Containers on the Desktop|https://blog.jessfraz.com/post/docker-containers-on-the-desktop/] ou comment utiliser Docker de façon non conventionnelle. Jessica nous a montré comment elle a réussi a faire tourner tous les outils de son laptop dans des images Docker : client mail (mutt), IRC (Irssi), client twitter (Rainbowstream), browser (chrome), skype (avec appel en direct à Arnaud Porterie ;-)), Spotify etc. Elle a énuméré toutes les astuces pour accéder au serveur X11, à la carte son et au micro à partir d'un conteneur. Parmi toutes ces applications, la plus difficile à exécuter dans un conteneur a été Virtual Box : il a fallu récompiler le driver @@vboxdrv@@.
 
-Pour terminer Jessie nous a parlé du [projet Tor|https://www.torproject.org/], un ensemble de outils pour l'anonymisation sur Internet, et de comment utiliser Docker pour rendre anonyme tout le flux TCP sortant de notre interface réseau. Les détails de cette démo sont également décrits dans un blog posts : [How to Route Traffic through a Tor Docker container|https://blog.jessfraz.com/post/routing-traffic-through-tor-docker-container/].
+Pour terminer Jessie nous a parlé du [projet Tor|https://www.torproject.org/], un ensemble d'outils pour l'anonymisation sur Internet, et de comment utiliser Docker pour rendre anonyme tout le flux TCP sortant de notre interface réseau. Les détails de cette démo sont également décrits dans un blog posts : [How to Route Traffic through a Tor Docker container|https://blog.jessfraz.com/post/routing-traffic-through-tor-docker-container/].
 
 Bref ce talk était encore une fois très intéressant et [la video est déjà disponible online|https://www.youtube.com/watch?v=1qlLUf7KtAw].
 
@@ -178,7 +178,7 @@ La collaboration entre Microsoft et Docker est de plus en plus étroite et Mark 
 
 Il met tout de suite au clair que Microsoft est la société qui a le plus contribué au code de Docker entre mars et juin 2015. Cela s'explique par les pull request importantes qui ont été faites par des développeurs du groupe de Redmond : le client natif pour Windows et le support de Windows 10 pour le Docker Engine.
 
-Mais Mark a surtout fait un certain nombre de démo qui montrent comment les produits Microsoft sont désormais intégrés avec Docker :
+Mais Mark a surtout fait un certain nombre de démos qui montrent comment les produits Microsoft sont désormais intégrés avec Docker :
 
 * Le déploiement d'une application .NET dans un conteneur Docker distant (dans un host Ubuntu) en utilisant Visual Studio sur Windows.
 * L'intégration de compose et swarm avec Visual Studio Online
