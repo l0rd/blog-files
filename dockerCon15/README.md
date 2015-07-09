@@ -25,7 +25,7 @@ En participant à un hackathon on peut être sur d'une chose : un t-shirt nous s
 
 ![](banner-commitstrip.png)
 
-Il a été réalisés par les français de CommitStrip qui ont aussi participé à l'hackathon : la classe ! Chez Zenika nous sommes des grands de leur [strip](http://www.commitstrip.com/fr/) et chez Docker [ça doit être la même chose](https://www.youtube.com/watch?v=cRczhEvSH2A)
+Il a été réalisé par les français de CommitStrip qui ont aussi participé à l'hackathon : la classe ! Chez Zenika nous sommes des grands fans de leur [strip](http://www.commitstrip.com/fr/) et chez Docker [ça doit être la même chose](https://www.youtube.com/watch?v=cRczhEvSH2A)
 
 ## Les nouveautés de la keynote : jour 1
 
@@ -35,7 +35,7 @@ C'est Ben Golub, le CEO de Docker, le premier à monter sur scène. Après quelq
 
 **Our mission is to build tools for mass innovation**
 
-Le discours de Solomon est clair et convaincant. Le logiciel est le moyen plus puissant aujourd'hui pour innover. Et Docker veut simplifier au maximum le développement et la publication de logiciel. Les quatre objectifs que Docker se donne pour les prochaines années en découlent: 
+Le discours de Solomon est clair et convaincant. Le logiciel est le moyen le plus puissant aujourd'hui pour innover. Et Docker veut simplifier au maximum le développement et la publication de logiciels. Les quatre objectifs que Docker se donne pour les prochaines années en découlent: 
 
 1. Reinvent the developer toolbox
 2. Build better plumbings 
@@ -46,12 +46,12 @@ Les annonces qui suivent au cours de cette keynote adressent les trois premiers 
 
 ### Docker network et les nouvelles versions de machine, compose et swarm
 
-Le premier jour de la DockerCon coincide avec la release de la version 1.7 de Docker. La nouveauté plus importante de cette version est l'integration dans le engine de [libnetwork](https://github.com/docker/libnetwork), le nouveau module réseau. Cela rend plus flexible la configuration réseau (grace à un système de plugin que nous verrons plus tard) mais surtout le support de configurations multihost. C'est a dire qu'il sera possible établir des liens, (les *links*), entre conteneurs sur des hosts distants. Cette dernière fonctionnalité n'est pas livrée avec la version 1.7 mais est disponible uniquement sur [le channel experimental ](https://experimental.docker.com/).
+Le premier jour de la DockerCon coincïde avec la release de la version 1.7 de Docker. La nouveauté la plus importante de cette version est l'intégration dans l'engine de [libnetwork](https://github.com/docker/libnetwork), le nouveau module réseau. Cela rend plus flexible la configuration réseau (grace à un système de plugin que nous verrons plus tard) mais surtout le support de configurations multi-host. C'est a dire qu'il sera possible d'établir des liens, (les *links*), entre conteneurs sur des hosts distants. Cette dernière fonctionnalité n'est pas livrée avec la version 1.7 mais est disponible uniquement sur [le channel experimental ](https://experimental.docker.com/).
 
 
-Machine, compose et swarm, les outils de orchestration de Docker, [ont aussi été mis à jour pour la DockerCon](http://blog.docker.com/2015/06/compose-1-3-swarm-0-3-machine-0-3/). Considérés jusqu'à aujourd'hui trop ~jeunes~ pour êtres utilisés en production, pour cette release il y a eu une stabilisation du code et pas de nouvelle features.
+Machine, compose et swarm, les outils d'orchestration de Docker, [ont aussi été mis à jour pour la DockerCon](http://blog.docker.com/2015/06/compose-1-3-swarm-0-3-machine-0-3/). Considérés jusqu'à aujourd'hui trop ~jeunes~ pour êtres utilisés en production, pour cette release il y a eu une stabilisation du code mais pas de nouvelle features.
 
-La seules nouveautés majeures concerne swarm : l'integration avec Mesos (i.e. la possibilité de deployer les conteneurs dans un cluster Mesos en passant par swarm) et l'exploitation du nouveau module de networking de l'engine Docker (i.e. la possibilité de faire communiquer conteneurs qui se trouvent des noeuds différents).
+Les seules nouveautés majeures concernent swarm : l'intégration avec Mesos (i.e. la possibilité de déployer les conteneurs dans un cluster Mesos en passant par swarm) et l'exploitation du nouveau module de networking de l'engine Docker (i.e. la possibilité de faire communiquer conteneurs qui se trouvent des noeuds différents).
 
 ### Docker plugins
 
