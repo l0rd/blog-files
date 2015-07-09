@@ -25,7 +25,7 @@ En participant à un hackathon on peut être sur d'une chose : un t-shirt nous s
 
 ((/public/Billet_0xxx/banner-commitstrip.png|commitstrip|C))
 
-Il a été réalisés par les français de CommitStrip qui ont aussi participé à l'hackathon : la classe ! Chez Zenika nous sommes des grands de leur [strip|http://www.commitstrip.com/fr/] et chez Docker [ça doit être la même chose|https://www.youtube.com/watch?v=cRczhEvSH2A]
+Il a été réalisés par les français de CommitStrip qui ont aussi participé à l'hackathon : la classe ! Chez Zenika nous sommes des grands fans de leur [strip|http://www.commitstrip.com/fr/] et chez Docker [ça doit être la même chose|https://www.youtube.com/watch?v=cRczhEvSH2A]
 
 !! Les nouveautés de la keynote : jour 1
 
@@ -84,7 +84,7 @@ Runc est actuellement en phase de développement mais un support multiplateforme
 
 L'année dernière, quelques jours avant la DockerCon Européenne, CoreOS avait présenté un standard ouvert pour la définition du format des images de conteneurs : [appc|https://github.com/appc/spec]. Et avait livré en même temps, [rkt|https://github.com/coreos/rkt], un runtime qui implémente ce standard. Plutôt qu'un attaque il s'agissait d'une incitation : Docker était dévenu le standard de facto avec un écosystème important qui attendait impatiemment la définition d'un standard pour les conteneurs.
 
-La réponse de Docker arrive aujourd'hui avec l'annonce du [Open Container Project|https://www.opencontainers.org/], une coalition de sociétés (entre autres Amazon, CoreOS, Docker, Google, IBM, Mesosphere, Microsoft, Rancher Labs, Red Hat, VMware) unies pour définir un standard pour le format des containers. Ce projet sera maintenu par la Linux Foundation. La rédaction de [la spécification [Open Container Format|https://github.com/opencontainers/specs] est encore en cours. Le premier draft sera publié à la fin du mois de juillet.
+La réponse de Docker arrive aujourd'hui avec l'annonce du [Open Container Project|https://www.opencontainers.org/], une coalition de sociétés (entre autres Amazon, CoreOS, Docker, Google, IBM, Mesosphere, Microsoft, Rancher Labs, Red Hat, VMware) unies pour définir un standard pour le format des containers. Ce projet sera maintenu par la Linux Foundation. La rédaction de [la spécification Open Container Format|https://github.com/opencontainers/specs] est encore en cours. Le premier draft sera publié à la fin du mois de juillet.
 
 Au moment où Salomon a fait l'annonce, Alex Polvi, le CEO de CoreOS qui se trouvait au premier rang, s'est levé pou serrer la main à Solomon : la guerre du standard des conteneurs est terminée !
 
@@ -101,7 +101,7 @@ Le Docker Hub a été lancé il y a à peine un an et compte déjà 240K utilisa
 
 Mais le Docker Hub est aussi utilisé comme outil pour l'integration continue : on peut builder une application (en utilisant l'instruction RUN dans un container) ou la déployer (avec le système de hook du Hub).
 
-Bref l'architecture et la capacité prévue our le Hub il y a un an ne sont plus suffisantes et un refactoring de la stack technique a été obligatoire. 
+Bref l'architecture et la capacité prévue pour le Hub il y a un an ne sont plus suffisantes et un refactoring de la stack technique a été obligatoire. 
 
 D'où le lancement de [cette nouvelle version|https://hub-beta.docker.com/], encore en beta, les jours de la conférence. A noter que [la vielle version|https://hub.docker.com] est toujours opérationnelle : on peut tester la beta si on veut ou bien continuer à utiliser l'ancienne version.
 
@@ -180,7 +180,7 @@ Il met tout de suite en clair que les Microsoft est la société qui a le plus c
 
 Mais Mark a surtout fait un certain nombre de démo qui montrent comment les produits Microsoft sont désormais intégrés avec Docker :
 
-* Le déploiement d'une application .NET dans un conteneur Docker distant (dans u host Ubuntu) en utilisant Visual Studio sur Windows.
+* Le déploiement d'une application .NET dans un conteneur Docker distant (dans un host Ubuntu) en utilisant Visual Studio sur Windows.
 * L'integration de compose et swarm avec Visual Studio Online
 * Le provisioning d'une instance Azure du nouveau Docker Trusted Registry
 * La coloration syntaxique et l'autocompletion des fichiers yml de docker-compose avec Visual Studio Code sur MacOS et le build, run d'un conteneur distant, cette fois-ci sur un serveur Windows 10.
