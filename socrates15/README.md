@@ -30,19 +30,19 @@ Voici la liste des sujets auxquels nous avons assistés et que nous avons trouv�
 ![day1 schedule](day1schedule.png)
 
 
-* Be Cat-matic (Pawel): 
-* Jascript Koans (Carlos)
+* Be Cat-matic (Pawel): arrêtons d'être Dog-matic! Durant cette session, nous avons pris les sujets qui nous tiennent le plus à cœur et essayé de trouver les cas où il ne faut pas les utiliser.
+* Javascript Koans (Carlos): pendant une heure, nous avons ouverts no chakras à javascript en plongeant dans du code aux effets de bord étranges.
 * Property based testing ()
 * Containers patterns ()
-* What the VIM (Jan)
+* What the VIM (Jan): parcequ'un bon éditeur devient un très bon éditeur quand il est bien configuré, nous avons échangés sur les plugins et autres astuces que nous connaissons sur vim (comme comment faire tourner vim dans emacs)
 * Remote pair-programming
-* Show me your test pyramid ()
+* Show me your test pyramid (): nous connaissons tous le schéma de la pyramide de tests et sont anti-pattern connu sous le nom de cône de glace, mais d'autres «pyramides» de tests existent.
 
 
 #### Les sujets de la deuxième journée
 ![day2 schedule](day2schedule.png)
 
-* Haskell Test Driven Learning (@)
+* Haskell Test Driven Learning (@): J'ai eu le plaisir de présenter comment j'apprends un nouveau language grâce à TDD. Je me suis appuyé sur Haskell pour cela.
 * Your Source Code is a Crime Scene
 * NixOS
 * Open Salary
@@ -51,6 +51,9 @@ Voici la liste des sujets auxquels nous avons assistés et que nous avons trouv�
 
 ## Workshops (dimanche)
 
+Extrem startup: durant une demi-journée, nous avons participé à un jeu ou nous devons développer un serveur http qui réponds à des questions allant de «quelle est la couleur d'une banane?» à «quel était la monnaie utilisé en espagne avant l'Euro?» en passant par «quel est la 9ième valeur de la suite de fibonnaci?». Chaque bonne réponse rapporte des point et une fausse réponse en enlève.
+
+Nous nous somme régulièrement arrêté afin de discuter sur ce qui marche et ce qui ne marche pas. Ce fût une expérience très enrichissante.
 
 ## Les autres activitées
 
