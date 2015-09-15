@@ -73,7 +73,7 @@ SoCraTes n'est pas que des talks est des workshop. Voici une liste, non exhausti
 * Power Point Karaoke : chaque concurant doit simuler un talk en utilisant des slides pris au hasard sur Internet. Pour rendre le tout encore plus hilarant le sujet du talk et les slides n'ont rien à voir.
 * Plusieurs Coding Dojo : Randori (Diamond), TDD avec un Commodore 64, Gilded Rose, intro à Ruby.
 
-![TDD avec le C64](c64TDD.jpg)
+![TDD avec le C64](c64tdd-small.png)
 
 ## Conclusion
 
