@@ -38,6 +38,8 @@ Voici la liste des sujets auxquels nous avons assistés et que nous avons trouv�
 * Remote pair-programming ((@hschmeisky](https://twitter.com/hschmeisky) et [rradczewski](https://twitter.com/rradczewski)): présentation de deux outils pour faire du pair programming à distance : saros et tmate. Le premier est un plugin eclipse et (@hschmeisky](https://twitter.com/hschmeisky) est contributeur. Le deuxième est un fork de tmux et [rradczewski](https://twitter.com/rradczewski) l'utilise en mission.
 * Show me your test pyramid ([@thbrunzendorf](https://twitter.com/thbrunzendorf)): nous connaissons tous le schéma de la pyramide de tests et sont anti-pattern connu sous le nom de cône de glace, mais d'autres «pyramides» de tests existent.
 
+![La session Open Salary s'est déroulée dans le jardin](outdoor.jpg)
+
 
 #### Les sujets de la deuxième journée
 ![day2 schedule](day2schedule.png)
@@ -48,6 +50,8 @@ Voici la liste des sujets auxquels nous avons assistés et que nous avons trouv�
 * Open Salary ([@luebken](https://twitter.com/luebken/)) : chez Giant Swarm ils ont décidé de ne rien cacher, tous les employés connaissent les salaires des autres et le salaire de chaque nouveau recruté est discuté ouvertement.
 * TDD does not always lead to good design ([@sandromancuso](https://twitter.com/sandromancuso/)) : ni le TDD classique ni l'approche outside-in sont des outils permettent de concevoir des architectures complexes. Dans certains cas on ne peut pas éviter de faire un travail de concéption en amont.
 * Git Internals ([@chr1shaefn3r](https://twitter.com/chr1shaefn3r)) : content driven storage et ce qui se cache dans le folder objects (blob, tree, commit, tag)
+
+![Pour la session de Sandro Mancuso il ne restaient pas de places assises](sandro-small.png)
 
 ## Workshops (dimanche)
 
@@ -61,11 +65,15 @@ Nous nous sommes régulièrement arrêtés afin de discuter sur ce qui marche et
 
 SoCraTes n'est pas que des talks est des workshop. Voici une liste, non exhaustives, des activités *secondaires* auxquelles nous avons participé :
 
+![Le powerpoint karaoke a eu un gros succès](pptkaraoke2-small.jpg)
+
 * Running : rendez-vous tous les matins à 7h pour parcourir 5km dans la forêt de Soltau tout en discutant craftsmanship.
 * Jeux de société : le soir après diner les gamers se retrouvaient dans une salle pour jouer à hanabi ou exploding kittens.
 * Crappy Tools : un paper board était affiché dans la grande salle et nous étions tous invités à marquer les outils que nous détestons.
 * Power Point Karaoke : chaque concurant doit simuler un talk en utilisant des slides pris au hasard sur Internet. Pour rendre le tout encore plus hilarant le sujet du talk et les slides n'ont rien à voir.
 * Plusieurs Coding Dojo : Randori (Diamond), TDD avec un Commodore 64, Gilded Rose, intro à Ruby.
+
+![TDD avec le C64](c64TDD.jpg)
 
 ## Conclusion
 
