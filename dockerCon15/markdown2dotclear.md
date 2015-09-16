@@ -20,7 +20,7 @@ With
 
 ## Images
 Replace all 
-	\!\[\(\w+)]\((\w+)\.png\)
+	\!\[(\w+)\]\((\w+)\.png\)
 With
 	((/public/Billet_0xxx/\2.png|\1|C))
 
