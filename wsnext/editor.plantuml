@@ -1,0 +1,60 @@
+@startuml
+
+class WorkspaceConfiguration {
+  - plugins
+  - editor
+}
+
+class ChePlugin {
+  - name
+  - version
+  - endpoints
+  - containers
+  - editorsPlugins
+}
+
+class CheEditorPlugin {
+  - editor
+  - name
+  - version
+}
+
+class CheEditor {
+  - name
+  - version
+  - endpoints
+  - containers
+}
+
+WorkspaceConfiguration o-- CheEditor 
+WorkspaceConfiguration *-- ChePlugin
+ChePlugin *-- CheEditorPlugin
+CheEditor --o CheEditorPlugin 
+
+note as editornote
+ - Theia, 
+ - Orion
+ - SAP web IDE
+ - Jupyter 
+ etc...
+end note
+
+editornote .. CheEditor
+
+note as pluginnote
+ - jdt.ls
+ - terminal
+ - git plugin
+ etc...
+end note
+
+pluginnote .. ChePlugin
+
+note as editorpluginnote
+ - jdt.ls theia client
+ etc...
+end note
+
+CheEditorPlugin .. editorpluginnote
+
+@enduml

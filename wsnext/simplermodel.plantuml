@@ -1,0 +1,25 @@
+@startuml
+
+class WorkspaceConfiguration {
+  - plugins
+}
+
+class ChePlugin {
+  - name
+  - version
+  - endpoints
+  - containers
+}
+
+WorkspaceConfiguration *-- ChePlugin
+
+note as pluginnote
+ - jdt.ls
+ - terminal
+ - git plugin
+ etc...
+end note
+
+pluginnote .. ChePlugin
+
+@enduml
