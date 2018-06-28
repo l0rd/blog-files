@@ -16,7 +16,7 @@ Details about the architectural changes that will be introduced with Workspace.n
 - Improving multi-container runtimes support and microservices debugging
 - Implementing a new CLI to manage workspaces
 
-The first one of these changes (*Running IDE tooling and plugins in separated sidecars containers*) is also a prerequisite for the rest of Workspace.next changes and we are going to describe it in greater detail in the rest of article.
+The first one of these changes (*Running IDE tooling and plugins in separated sidecars containers*) is also a prerequisite for the rest of Workspace.next changes and we are going to describe it in greater detail in the rest of this article.
 
 ## Using sidecar containers
 
