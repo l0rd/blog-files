@@ -34,21 +34,48 @@ To fix that we need to run Che plugins and tooling in separate containers (sidec
 
 ## Workspace.next first step
 
-A few weeks ago [Alex](https://twitter.com/garagatyi) has merged [the first Workspace.next Pull Request](https://github.com/eclipse/che/pull/9774). That made it possible to run user defined runtimes and Che tooling in separate containers (here is a [short demo](https://drive.google.com/file/d/1x8jKFdHKilwD8r123i-quKueUMs5tbBO/view?usp=sharing)). To check it out (beware that it's still a work in progress) you will need to run Che on Kubernetes and:
+A few weeks ago [Alex](https://twitter.com/agaragatyi) has merged [the first Workspace.next Pull Request](https://github.com/eclipse/che/pull/9774). That made it possible to run user defined runtimes and Che tooling in separate containers (here is a [short demo](https://drive.google.com/file/d/1x8jKFdHKilwD8r123i-quKueUMs5tbBO/view?usp=sharing)). To check it out (beware that it's still a work in progress) you will need to run Che on Kubernetes with server strategy set to multi-host (`CHE_INFRA_KUBERNETES_SERVER__STRATEGY=multi-host`) and:
 
-1. Start a Che workspace based on the following kubernetes recipe:
-    ```json
+1. Create a Che workspace based on the following kubernetes recipe:
 
+    ```yaml
+    ---
+    kind: List
+    items:
+    -
+    apiVersion: v1
+    kind: Pod
+    metadata:
+        name: wsnextdemo
+    spec:
+        containers:
+        -
+            image: eclipse/ubuntu_jdk8
+            name: app
     ```
+
 2. Start the feature server
-    ```bash
 
+    In Che git repository folder `deploy/kubernetes/kubectl` execute:
+
+    ```bash
+    kubectl apply --namespace=che -f wsnext/feature-api.yaml
     ```
+
 3. Stop the workspace and modify it using Che API to add the following attribute:
+
     ```json
-    "features": "theia", "git", "jdt","maven","terminal"
+    "features": "org.eclipse.che.che-theia/0.0.2"
     ```
-4. Restart the workspace
+    using the following command:
+
+    ```bash
+    curl ${CHE_URL}/api/workspace/${Workspace ID} | jq '.attributes.features|=("org.eclipse.che.che-theia/0.0.2")'
+    ```
+
+4. Start the workspace
+
+5. Go to ${CHE_URL}/api/workspace/${Workspace ID} and find Theia server. Then open corresponding URL.
 
 When the workspace is run for the second time you should see that multiple containers are run. One for each IDE tool ("feature"): tools are running inside sidecar containers!
 
