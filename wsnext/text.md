@@ -25,6 +25,8 @@ In the old workspace model we ran multiple services in one unique container. Whe
 - We are breaking the containers promise: the image used to run the application in Che (the one that the developer will test) is not the same one that will be used in production.
 - The IDE tooling is packaged and distributed as a tar file instead of being built as container images.
 - Limiting the resources (CPU/RAM) available for the application will limit the IDE tooling too
+- If a user defined runtime container does not have the right packages installed it will fail to start the IDE tooling
+- Workspace bootstrap may be slowed down by the IDE tooling installation
 
 To fix that we need to run Che plugins and tooling in separate containers (sidecars) avoiding any modification to users defined containers (user runtime environments).
 
