@@ -75,13 +75,13 @@ A few weeks ago [Alex](https://twitter.com/agaragatyi) has merged [the first Wor
 
 4. Start the workspace
 
-5. Go to ${CHE_URL}/api/workspace/${Workspace ID} and find Theia server. Then open corresponding URL.
+5. Go to `${CHE_URL}/api/workspace/${Workspace ID}` and find Theia server. Then open corresponding URL.
 
 When the workspace is run for the second time you should see that multiple containers are run. One for each IDE tool ("feature"): tools are running inside sidecar containers!
 
 ## Integration with newest Che developments: Theia and the marketplace
 
-Workspace.next is just one amongst many major changes that we will be introducing in the next months. Some equally important new features include the replacement of Orion with Theia as the default code editor and the use of a plugin marketplace to find and download Che extensions. In this section we are going to look at how these new features will be integrated within Worksapce.next model.
+Workspace.next is just one amongst many major changes that we will be introducing in the next months. Some equally important new features include the replacement of GWT IDE based [Orion](https://projects.eclipse.org/projects/ecd.orion) with [Eclipse Theia](https://projects.eclipse.org/projects/ecd.theia) based on Monaco as the default code editor and the use of a plugin marketplace to find and download Che extensions. In this section we are going to look at how these new features will be integrated within Worksapce.next model.
 
 ### Simplifying the model
 
@@ -91,7 +91,7 @@ With the first Workspace.next step we have introduced the concepts of "Feature" 
 
 ### Getting Che plugins from a Marketplace
 
-The description of a Che plugin will be stored as a YAML file (with attributes such as the container image of the Che plugin, its endpoint, health check etc...).
+The description of a Che plugin will be stored as a YAML file (with attributes such as the container image of the Che plugin, its endpoint, etc...).
 
 The YAML files will be published in a marketplace. When loading a plugin within a workspace Che will fetch the plugin description from a marketplace.
 
@@ -99,7 +99,7 @@ The YAML files will be published in a marketplace. When loading a plugin within 
 
 ### How Workspace.next will run Theia (as well as other editors) and its plugins
 
-Another change that will be introduced is the concept of "Che Editor". This is a particular kind of "Che plugin" that has (sub-)plugins and serves the workspace UI. This means that Theia (or another "Che Editor" like Orion or Jupyter) will run as a sidecar container as any Che plugin.
+Another improvement that will be introduced is the concept of "Che Editor". This is a particular kind of "Che plugin" that has (sub-)plugins and serves the workspace UI. This means that Eclipse Theia (or another "Che Editor" like [Orion](https://projects.eclipse.org/projects/ecd.orion) or [Jupyter](http://jupyter.org/index.html)) will run as a sidecar container as any Che plugin.
 
 A Che workspace can have one "Che Editor" or none at all. A Che workplace with no "Che Editor" will be an interesting use case: the IDE tooling API (that provides languages support etc...) will still be available and could be used from classic desktop IDEs (think about VIM, Eclipse, Emacs).
 
