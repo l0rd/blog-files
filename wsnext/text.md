@@ -12,7 +12,7 @@ Details about the architectural changes that will be introduced with Workspace.n
 
 - Running IDE tooling and plugins in separated sidecar containers
 - Integrating Che with third party applications catalogs as [OpenShift Service Catalog](https://docs.openshift.org/latest/architecture/service_catalog/index.html) and [Kubeapps](https://kubeapps.com/)
-- Creating workspaces from a Kubernetes/OpenShift YAML, a Composefile or even a Dockerfile
+- Creating workspaces from a Kubernetes/OpenShift YAML, a Composefile or even a Dockerfile imported from a GitHub repository
 - Improving multi-container runtimes support and microservices debugging
 - Implementing a new CLI to manage workspaces
 
@@ -85,7 +85,7 @@ Workspace.next is just one amongst many major changes that we will be introducin
 
 ### Simplifying the model
 
-With the first Workspace.next step we have introduced the concepts of "Feature" (a bundle of Che extensions) and "Service" (a Che extension). This "two layer" based model is over-complicated to begin with and we have decided to get rid of the "Feature" abstraction (there won't be bundles of plugins, at least at the beginning). Another change has been to rename "Services" into "Che Plugins":
+In the model introduced with the first Workspace.next PR a plugin was defined as part of a "Feature". We can make it simpler and remove the concept of "Feature" upgrading "Che Plugins" as attribute of a Workspace configuration:
 
 ![simplermodel](simplermodel.png)
 
