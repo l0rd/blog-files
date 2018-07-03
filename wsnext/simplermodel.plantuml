@@ -1,6 +1,7 @@
 @startuml
 
 class WorkspaceConfiguration {
+  - userRuntimeRecipe
   - plugins
 }
 

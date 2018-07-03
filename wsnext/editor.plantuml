@@ -1,6 +1,7 @@
 @startuml
 
 class WorkspaceConfiguration {
+  - userRuntimeRecipe
   - plugins
   - editor
 }
@@ -42,7 +43,7 @@ end note
 editornote .. CheEditor
 
 note as pluginnote
- - jdt.ls
+ - language servers
  - terminal
  - git plugin
  etc...
@@ -51,7 +52,7 @@ end note
 pluginnote .. ChePlugin
 
 note as editorpluginnote
- - jdt.ls theia client
+ - language server's clients
  etc...
 end note
 
