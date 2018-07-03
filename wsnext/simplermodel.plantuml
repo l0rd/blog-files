@@ -15,7 +15,7 @@ class ChePlugin {
 WorkspaceConfiguration *-- ChePlugin
 
 note as pluginnote
- - jdt.ls
+ - language servers
  - terminal
  - git plugin
  etc...
