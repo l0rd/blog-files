@@ -36,7 +36,7 @@ To fix that we need to run Che plugins and tooling in separate containers (sidec
 
 A few weeks ago [Alex](https://twitter.com/agaragatyi) has merged [the first Workspace.next Pull Request](https://github.com/eclipse/che/pull/9774). That made it possible to run user defined runtimes and Che tooling in separate containers (here is a [short demo](https://drive.google.com/file/d/1x8jKFdHKilwD8r123i-quKueUMs5tbBO/view?usp=sharing)). To check it out (beware that it's still a work in progress) you will need to run Che on Kubernetes with server strategy set to multi-host (`CHE_INFRA_KUBERNETES_SERVER__STRATEGY=multi-host`) and:
 
-1. Create a Che workspace based on the following kubernetes recipe:
+1. Create a Che workspace based without installers (wsagent included), with a `features` attribute containing a comma separated list of "features" (e.g. `"features" : "org.eclipse.che.che-theia/0.0.3"`) and using the following kubernetes recipe:
 
     ```yaml
     ---
@@ -54,30 +54,45 @@ A few weeks ago [Alex](https://twitter.com/agaragatyi) has merged [the first Wor
             name: app
     ```
 
+   This can be achieved with one HTTP request using `curl`:
+
+    ```bash
+    curl '${CHE_URL}/api/workspace?namespace=che&attribute=features:org.eclipse.che.che-theia/0.0.3' \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    --data-binary @- <<"EOF"
+    {
+        "environments": {
+            "default":{
+                "recipe": {
+                    "contentType":"application/x-yaml",
+                    "type":"kubernetes",
+                    "content":"---\nkind: List\nitems:\n-\n apiVersion: v1\n kind: Pod\n metadata:\n name: wsnextdemo\n spec:\n containers:\n -\n image: eclipse/ubuntu_jdk8\n name: app"},
+                "machines": {
+                    "wsnextdemo/app": {
+                        "attributes":{}
+                    }
+                }
+            }
+        },
+        "defaultEnv":"default",
+        "name":"workspace-next"
+    }
+    EOF
+    ```
+
 2. Start the feature server
 
-    In Che git repository folder `deploy/kubernetes/kubectl` execute:
+    From folder `deploy/kubernetes/kubectl` in Che git repository execute the following command:
 
     ```bash
     kubectl apply --namespace=che -f wsnext/feature-api.yaml
     ```
 
-3. Stop the workspace and modify it using Che API to add the following attribute:
+3. Start the workspace
 
-    ```json
-    "features": "org.eclipse.che.che-theia/0.0.2"
-    ```
-    using the following command:
+4. Go to `${CHE_URL}/api/workspace/che/workspace-next` and find Theia server URL (e.g. `"servers": { "theia": { "url": ...`)
 
-    ```bash
-    curl ${CHE_URL}/api/workspace/${Workspace ID} | jq '.attributes.features|=("org.eclipse.che.che-theia/0.0.2")'
-    ```
-
-4. Start the workspace
-
-5. Go to `${CHE_URL}/api/workspace/${Workspace ID}` and find Theia server. Then open corresponding URL.
-
-When the workspace is run for the second time you should see that multiple containers are run. One for each IDE tool ("feature"): tools are running inside sidecar containers!
+5. Open Theia URL in your browser.
 
 ## Integration with newest Che developments: Theia and the marketplace
 
