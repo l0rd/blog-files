@@ -13,7 +13,7 @@
 
 +---------------+  +-----------------+  +---------------+  +----------------+
 | /-----------\ |  | /-------------\ |  | /-----------\ |  | /------------\ |
-| |  User APP | |  | |cBLU Terminal| |  | |cGRE IDE   | |  | |cYEL jdt.ls | |
+| |  User APP | |  | |cBLU Terminal| |  | |cGRE IDE   | |  | |cYELLANG SRV| |
 | \-=---------+ |  | \-=-----------+ |  | \-=---------+ |  | \-=----------+ |
 |           USER|  |          SIDECAR|  |        SIDECAR|  |         SIDECAR|
 |        RUNTIME|  |        CONTAINER|  |      CONTAINER|  |       CONTAINER|
