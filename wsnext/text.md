@@ -126,5 +126,12 @@ Here is a simplified schema of the relations between Che Plugin and Che Editor:
 
 ![editor-plugins](editor.png)
 
-## Conclusions
+## Superpowers for Che workspaces
 
+We are glad to introduce in this blog post the beginning of this new journey for Che workspaces. This new model provides a much flexible approach which fit in a world of container based applications.
+
+When you define the containers for your application, you want to leverage them along the whole toolchain you are using and you also look at preserving the consistency between production environments and developer environments. With Workspace.next, Che will allow you to reuse the exact definition of the production environment directly in your developer environment. It will bring separate containers for the tools you need while developing your application and the containers you need to run your application. 
+
+Tools will be running in their own containers and each tools will be packaged with its own dependencies in a container. A tool in Che will not require anything to be installed, it will just need to spin up a new container. Each tool will also be running isolated from each others and get its own lifecycle to get easily switched or upgraded. Example: with traditional developer tools, to get Java support, the JDK needs to be installed on the machine. With Che workspace, the JDK will be provided along with the Java Language Server. Switching to a different JDK version only require to swap the Java tool’s container. 
+
+The superpowers of the new Che workspaces are to allow a developer to leverage the application definition K8S/OpenShift YAML to deliver a ready-to-use developer workspace with the tools needed without having to feel the pain of installing anything.
